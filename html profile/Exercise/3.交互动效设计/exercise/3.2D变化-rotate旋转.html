@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 语法：
+      transform：rotate(360deg); 旋转
+      参数单位：deg（度），正值是顺时针，负值是逆时针
+      transform-origin:left top; 旋转的基点
+      transform-origin设置旋转中心点。
+      属性值支持left、top等，也可以支持数字比如像素和百分比等。 */
+      /* 旋转（rotate）通过改变元素在平面或空间中的角度实现视觉效果。
+      注意：
+      行内元素的布局特性（无法设置宽高、盒模型限制、transform基准异常）会破坏旋转效果的稳定性和精确性，所以文字
+      类要转换行内块或者块级元素。比如字体图标需要转换。 */
+      img {
+        width: 150px;
+        height: 150px;
+        margin: 200px;
+        border-radius: 50%;
+        /* 过渡 */
+        transition: all 0.5s;
+        /* 左方位旋转 */
+
+        transform-origin: left;
+      }
+      img:hover {
+        transform: rotate(360deg);
+      }
+    </style>
+  </head>
+  <body>
+    <img src="../img3/1.png" alt="" />
+  </body>
+</html>

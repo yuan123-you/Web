@@ -1,0 +1,178 @@
+/* 定义全局变量 */
+:root {
+  --main-blue: #01a1ff;
+}
+/* 版心 */
+.w {
+  width: 1000px !important;
+  margin: 0 auto !important;
+}
+/* 头部*/
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+}
+.header .logo img {
+  width: 100%;
+  height: 100%;
+}
+.header .nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 60px;
+}
+.header .nav ul {
+  display: flex;
+  gap: 30px;
+}
+/* 添加导航栏a标签的下边框，开始设置为透明色 */
+.header .nav ul li a {
+  padding: 10px;
+  border-bottom: 1px solid transparent;
+}
+/* 设置鼠标悬停样式 */
+.header .nav ul li a:hover {
+  color: aqua !important;
+  border-color: aqua;
+}
+/* 1.轮播图 */
+.swiper {
+  margin-bottom: 30px;
+}
+.swiper img {
+  display: block !important;
+  width: 100% !important;
+}
+/* 页面底部模块 */
+.footer {
+  margin-top: 100px;
+  padding-top: 50px;
+  background-color: var(--main-blue);
+}
+/* content盒子 grid布局 样式 */
+.footer .content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 2fr;
+  justify-content: space-between;
+  padding-bottom: 50px;
+}
+/* footer所有a标签的样式 */
+.footer a {
+  padding: 10px 0;
+  color: white !important;
+}
+/* dl列表行高 */
+.footer .content .list {
+  line-height: 30px;
+}
+
+.footer .content .list dt {
+  font-size: 20px;
+  padding-bottom: 20px;
+}
+/* dt里面的a添加下边框 */
+.footer .content .list dt a {
+  border-bottom: 1px solid white;
+}
+/* 给placeholder伪元素添加样式 */
+.footer .content textarea::placeholder,
+.footer .content input::placeholder {
+  color: white !important;
+  font-size: 14px;
+}
+/* 两个input输入框 */
+.footer .content .info {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+.footer .content input,
+.footer .content textarea,
+.footer .content button {
+  background-color: transparent;
+  border: 1px solid white;
+  padding: 10px 5px;
+}
+.footer .content textarea {
+  margin: 15px 0 10px;
+  width: 100%;
+  height: 120px;
+}
+.footer .content button {
+  padding: 5px 40px;
+  color: white;
+}
+/* copyright */
+.copyright {
+  border-top: 2px solid #ffffff;
+}
+.copyright .copyright_text {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  color: #ffffff;
+  gap: 30px;
+}
+/*全局样式开始*/
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "微软雅黑";
+  font-size: 12px;
+  background: #ffffff;
+}
+ul,
+li,
+a,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+p,
+div {
+  padding: 0;
+  margin: 0;
+}
+ul {
+  list-style: none;
+}
+img {
+  max-width: 100%;
+  border: 0;
+}
+a {
+  color: #000 !important;
+  text-decoration: none !important;
+}
+.clearfloat {
+  clear: both;
+  height: 0;
+  font-size: 1px;
+  line-height: 0;
+}
+/*图片自适应*/
+img {
+  border: 0;
+  max-width: 100%;
+  height: auto;
+  height: auto\9;
+  display: block;
+}
+a:focus {
+  outline: none;
+  -moz-outline: none;
+}
+a:active {
+  background: none;
+}
+/*解决chrome 浏览器，当文本框，多行文本获得焦点的时候，会有一个边框的问题*/
+input,
+textarea {
+  outline: none;
+}
+/*全局样式结束*/

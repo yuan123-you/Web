@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 语法：
+    position: fixed;
+    设定元素为固定定位
+    元素脱离正常流，不占据空间，其他元素按原布局排列
+    始终相对于浏览器窗口（视口）定位，滚动页面时位置不变
+    可以通过top、bottom、left、right属性进行偏移。
+    优先级：若同时设置top和bottom，仅top生效；同理left覆盖right。 -->
+    <style>
+      .box {
+        position: fixed;
+        left: 50%;
+        margin-left: -300px;
+        bottom: 30px;
+        width: 600px;
+        height: 120px;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 2.3操作数组-删除
+  目标：能够删除数组元素（数据）
+  数组.pop（）方法从数组中删除最后一个元素，并返回该元素的值
+  数组.splice()方法删除指定元素
+  语法：
+  arr.splice(start,deleteCount)
+  arr.splice（起始位置，删除几个元素）
+  解释：
+  start 起始位置：
+  指定修改的开始位置（从0计数）
+  deleteCount:
+  表示要移除的数组元素的个数
+  可选的。如果省略则默认从指定的起始位置删除
+  到最后 -->
+  </head>
+  <body>
+    <script>
+      let arr = ["pink", "blur", "blue", "contact"];
+      //1.pop()删除最后一元素
+      arr.pop();
+      document.writeln(arr);
+      document.write("<br>");
+      //2.shift()删除第一个元素
+      let arr1 = ["get", "beautiful", "boom", "content"];
+      arr1.shift();
+      document.writeln(arr1);
+      document.write("<br>");
+      //3.splice()删除第一个元素  arr.splice（起始位置（从0开始），删除几个元素）
+      let arr2 = ["get", "beautiful", "boom", "content"];
+      arr2.splice(1, 2); //从下标为1的元素开始删，删2个元素
+      document.writeln(arr2);
+    </script>
+  </body>
+</html>

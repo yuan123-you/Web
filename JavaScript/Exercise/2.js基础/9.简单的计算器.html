@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let num1 = Number(prompt("请输入第一个数："));
+      let num2 = Number(prompt("请输入第二个数："));
+      let flag = prompt("请输入+ - * / 其中之一：");
+      switch (flag) {
+        case "+":
+          alert(`${num1}+${num2}=${num1 + num2}`);
+          break;
+        case "-":
+          alert(`${num1}-${num2}=${num1 - num2}`);
+          break;
+        case "*":
+          alert(`${num1}*${num2}=${num1 * num2}`);
+          break;
+        case "/":
+          alert(`${num1}/${num2}=${num1 / num2}`);
+          break;
+        default:
+          alert("输入错误！");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @keyframes move {
+        0% {
+          transform: translate(0, 0);
+        }
+        25% {
+          transform: translate(-150px, -100px);
+        }
+        50% {
+          transform: translate(-250px, 0px);
+        }
+        75% {
+          transform: translate(-150px, 100px);
+        }
+        100% {
+          transform: translate(0, 0);
+        }
+      }
+      .box {
+        position: relative;
+        width: 300px;
+        height: 200px;
+        background-color: skyblue;
+        margin: 100px auto;
+        text-align: center;
+        line-height: 200px;
+        font-size: 30px;
+        animation: move 4s linear infinite;
+      }
+      .close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        font-size: 16px;
+        padding: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      我是广告
+      <div class="close">❌️</div>
+    </div>
+    <script>
+      //1.获取事件源
+      const btn = document.querySelector(".close");
+      //关闭的是大盒子
+      const box = document.querySelector(".box");
+      //2.事件监听
+      btn.addEventListener("click", function () {
+        //display设置为none，隐藏大盒子
+        box.style.display = "none";
+      });
+    </script>
+  </body>
+</html>

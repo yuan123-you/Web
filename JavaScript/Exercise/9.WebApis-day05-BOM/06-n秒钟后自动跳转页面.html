@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="http://www.baidu.com">完成注册5秒钟后自动跳转首页</a>
+    <script>
+      //获取元素
+      const a = document.querySelector("a");
+      let count = 5;
+      //开启定时器
+      let n = setInterval(function () {
+        count--;
+        a.innerHTML = `完成注册${count}秒钟后自动跳转首页`;
+        //count=0时停止定时器并跳转页面
+        if (count <= 0) {
+          clearInterval(n);
+          //跳转 location.href = 链接
+          location.href = a.href;
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 语法：
+    position: sticky;
+    设定元素为粘性定位
+    元素在滚动到指定位置（如top：10px）前为相对定位，之后转为固定定位
+    父容器的overflow需为visible，否则粘性定位失效
+    可以通过top、bottom、left、right属性进行偏移
+    须指定top，right，bottom或left四个其中之一，才可使粘性定位生效 -->
+    <style>
+      .nav {
+        position: sticky;
+        top: 0;
+        width: 1000px;
+        height: 100px;
+        background-color: pink;
+        margin: 100px auto;
+      }
+      .main {
+        height: 2000px;
+        background-color: skyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav"></div>
+    <div class="main"></div>
+  </body>
+</html>

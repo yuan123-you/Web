@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let i = 1;
+      let sum = 0;
+      let sum1 = 0;
+      while (i <= 100) {
+        sum += i;
+        if (i % 2 === 0) {
+          sum1 += i;
+        }
+        i++;
+      }
+      document.write(`总和为：${sum}<br>`);
+      document.write(`偶数之和为：${sum1}`);
+    </script>
+  </body>
+</html>

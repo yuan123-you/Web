@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 语法：
+    transform:scale(1.5);/*放大*/
+    transform:scale(1.5，1);/* 放大*/
+    单参数：同时作用于X和Y轴（如scale（2）表示整体放大2倍）。
+    双参数：第一个控制X轴，第二个控制Y轴（如scale(O.5，1.5）横向缩小
+    50%、纵向放大50%） -->
+    <style>
+      div {
+        width: 200px;
+        height: 200px;
+      }
+      .box1 {
+        background-color: pink;
+        transition: all 0.5s;
+      }
+      .box1:hover {
+        /* 整体缩放1.5倍 */
+        transform: scale(1.5);
+      }
+      .box2 {
+        background-color: skyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+  </body>
+</html>

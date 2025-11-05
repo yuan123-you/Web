@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #000;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      a {
+        text-decoration: none;
+        color: #fff;
+      }
+      .btn1 {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        width: 140px;
+        height: 60px;
+        margin: 100px;
+        padding: 4px;
+        border-radius: 6px;
+        text-align: center;
+        line-height: 57px;
+        background-color: pink;
+      }
+      /* 定义动画 */
+      @keyframes move {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+      /* 添加彩色盒子 */
+      .btn1::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200%;
+        height: 100%;
+        background-color: #fff;
+        /* 调整背景图大小 */
+        background-size: 50% 100%;
+        /*添加线性渐变*/
+        background: linear-gradient(
+          115deg,
+          #4fcf70,
+          #fad468,
+          #a767e5,
+          #12bcfe,
+          #44ce7b
+        );
+        /* 使用动画 */
+        animation: move 0.8s linear infinite;
+      }
+      .btn1 span {
+        position: relative;
+        display: block;
+        background-color: #000;
+        width: 100%;
+        height: 100%;
+        border-radius: 3px;
+      }
+      .btn2 {
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 300px;
+        height: 200px;
+        border: 1px solid #333;
+        border-radius: 10px;
+        margin: 50px;
+        color: #fff;
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+        line-height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 方式1 -->
+    <a href="#" class="btn1">
+      <span>开始按钮</span>
+    </a>
+    <!--方式2-->
+    <div class="btn2">渐变按钮</div>
+  </body>
+</html>

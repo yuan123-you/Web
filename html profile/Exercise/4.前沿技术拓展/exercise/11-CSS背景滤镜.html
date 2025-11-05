@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS背景滤镜</title>
+    <!-- backdrop-filter是CSS中的一个图形滤镜属性，主要用于对元素背后的区域（即“背景”）应用滤镜效果。
+  它通常与半透明背景配合使用，能实现类似“毛玻璃”的视觉效果 -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 3000px;
+      }
+
+      img {
+        display: block;
+        margin: 0 auto;
+      }
+
+      .navbar {
+        /* 固定定位 */
+        position: fixed;
+        left: 0;
+        width: 100%;
+        height: 120px;
+      }
+
+      .navbar1 {
+        top: 0;
+        /* 背景透明 */
+        background: transparent;
+        /* 饱和度 模糊 */
+        backdrop-filter: saturate(150%) blur(28px);
+      }
+
+      .navbar2 {
+        top: 130px;
+        border-bottom: 1px solid #ccc;
+        /* 背景渐变 */
+        background-image: radial-gradient(transparent 1px, #fff 1px);
+        /* 背景缩放 */
+        background-size: 4px 4px;
+        backdrop-filter: saturate(50%) blur(4px);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="navbar navbar1">头部导航栏</div>
+    <div class="navbar navbar2">头部导航栏</div>
+    <img src="../img/dh.jpg" alt="" />
+    <img src="../img/bgimg.png" alt="" />
+  </body>
+</html>

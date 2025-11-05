@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      /* 语法：
+        1. grid-auto-flow:row;(默认）
+        子元素按先行后列顺序填充，优先填满一行后换行
+        2. grid-auto-flow:column;
+        子元素按先列后行顺序填充，优先填满一列后换列 */
+      .box {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        /* 指定子元素按先列后行排序 */
+        grid-auto-flow: column;
+        max-width: 1760px;
+        height: 900px;
+        margin: 100px auto;
+        border-radius: 20px;
+        gap: 10px;
+        overflow: hidden;
+        /* 溢出隐藏，露出圆角 */
+      }
+      .box img {
+        /* 指定图片宽高，因为父级设置了grid,所以子子级可以直接设置宽高 */
+        width: 100%;
+        height: 100%;
+        /* object-fit是CSS中用于控制替换元素（如<img>、<video>、<iframe>等加载外部资源的元素）内容如
+        何适应其容器尺寸的属性。
+        fill 默认值。拉伸内容以完全填充容器，不保持宽高比，可能导致内容变形（最常用但需谨慎）。
+        contain 保持内容固有宽高比，缩放至完全适应容器内部（内容全部可见），容器可能有空白（类似“适应”模式）。
+        cover 保持内容固有宽高比，缩放至覆盖容器（内容可能部分被裁剪），容器无空白（类似“填充”模式）。
+        配合：object-position:object-position控制内容在容器内的对齐位置（如center居中、top left左上
+        角），常与object-fit搭配使用（例如cover时调整裁剪区域）。 */
+        object-fit: cover;
+        object-position: center;
+      }
+      .box .item {
+        background-color: skyblue;
+      }
+      .box .item:first-child {
+        grid-row: 1/3;
+      }
+      .box .item:nth-child(3) {
+        grid-column: 2/4;
+        grid-row: 2/3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="item"><img src="../图片素材/img2/tree1.jpg" alt="" /></div>
+      <div class="item"><img src="../图片素材/img2/tree2.jpg" alt="" /></div>
+      <div class="item"><img src="../图片素材/img2/tree3.jpg" alt="" /></div>
+      <div class="item"><img src="../图片素材/img2/tree4.jpg" alt="" /></div>
+    </div>
+  </body>
+</html>

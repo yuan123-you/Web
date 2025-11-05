@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      body {
+        overflow: hidden;
+        background: url(../img3/bg.jpg) no-repeat center/cover #000;
+        /* background-size: cover; */
+      }
+      .ball1 {
+        position: absolute;
+        left: 20%;
+        top: 22%;
+        width: 13%;
+      }
+      .ball2 {
+        position: absolute;
+        left: 65%;
+        top: 50%;
+        width: 22%;
+      }
+      .wx {
+        position: absolute;
+        width: 8%;
+        left: 64%;
+        top: 40%;
+      }
+      /* 定义球体运动动画 */
+      @keyframes move1 {
+        0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(-45px);
+        }
+      }
+      /* 使用动画 */
+      .ball1 {
+        animation: move1 5s linear infinite alternate;
+      }
+      .ball2 {
+        animation: move1 6s linear infinite alternate;
+      }
+      /* 定义卫星动画 */
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(-45deg);
+        }
+      }
+      /* 使用动画 */
+      .wx {
+        animation: rotate 30s linear infinite alternate;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="../img3/ball1.png" alt="" class="ball1" />
+    <img src="../img3/ball2.png" alt="" class="ball2" />
+    <img src="../img3/wx.png" alt="" class="wx" />
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 编写程序时过度依靠系统内部的隐式转换是不严禁的，因为隐式转换规律并不清晰，大多是靠经验总结的规律。
+    为了避免因隐式转换带来的问题，通常根逻辑需要对数据进行显示转换。
+    概念：
+    自己写代码告诉系统该转成什么类型
+    转换为数字型 Number(数据）
+    转成数字类型
+    如果字符串内容里有非数字，转换失败时结果为NaN（NotaNumber）即不是一个数字
+    NaN也是number类型的数据，代表非数字
+    >parseInt(数据）
+    只保留整数
+    >parseFloat(数据)
+    >可以保留小数 -->
+  </head>
+  <body>
+    <script>
+      //显式转换 Number(数据) parseInt(数据） parseFloat(数据)
+      let str = "123";
+      console.log(Number(str));
+      let num1 = +prompt("请输入年薪：");
+      let num2 = Number(prompt("请输入年薪："));
+      let num3 = prompt("请输入年薪：");
+      console.log(num1);
+      console.log(num2);
+      console.log(Number(num3));
+      //-------------------------
+      console.log(parseInt(12.34));
+      console.log(parseInt("12.34px"));
+      console.log(parseInt("ldh12.34"));
+      //-----------------------------
+      console.log(parseFloat(12.34));
+      console.log(parseFloat("12.34px"));
+      console.log(parseFloat("cxk12.34"));
+    </script>
+  </body>
+</html>

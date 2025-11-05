@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //立即执行函数
+      (function () {
+        document.writeln(100);
+      })(); //函数会立即执行，
+      //第一种写法
+      (function (x, y) {
+        document.writeln(x + y);
+      })(1, 2); //函数会立即执行，
+      //第二种写法
+      // (function (x, y) {document.writeln(x * y);}(3, 4));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 先引入js文件 -->
+    <script src="./lodash.min.js"></script>
+    <script>
+      const obj = {
+        uname: " yuan",
+        age: 20,
+        hobby: ["健身", "打游戏"],
+        classmate: {
+          uname: "大帝",
+        },
+      };
+      const newObj = _.cloneDeep(obj);
+      newObj.age = 21;
+      newObj.hobby[1] = "学习";
+      newObj.classmate.uname = "宋奥";
+      console.log(newObj);
+      console.log(obj);
+    </script>
+  </body>
+</html>

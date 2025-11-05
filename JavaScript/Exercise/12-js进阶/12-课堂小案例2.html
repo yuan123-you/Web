@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div></div>
+    <script>
+      const gift = "50g茶叶，清洁球";
+      // split("，") 把字符串转换为数组，用，隔开
+      const arr = gift.split("，");
+      console.log(arr);
+      // 用map() 遍历数组，把数组元素生成到span里面
+      const arr1 = arr.map((item) => `<span>【赠品】${item}</span>`);
+      // 用join("")，把数组转换成字符串并放到div盒子里
+      document.querySelector("div").innerHTML = arr1.join("");
+    </script>
+  </body>
+</html>

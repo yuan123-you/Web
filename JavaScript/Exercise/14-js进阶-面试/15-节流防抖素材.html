@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 500px;
+        height: 500px;
+        background-color: #ccc;
+        color: #fff;
+        text-align: center;
+        font-size: 100px;
+      }
+    </style>
+    <!-- 防抖和节流总结
+    性能优化  说明  使用场景
+    防抖   单位时间内，频繁触发事件，只执行最后一次    搜索框搜索输入、手机号、邮箱验证输入检测   
+    节流   单位时间内，频繁触发事件，只执行一次   高频事件:鼠标移动mousemove、页面尺寸缩放resize、滚动条滚动scroll等等 -->
+  </head>
+
+  <body>
+    <div class="box"></div>
+    <script src="./lodash.min.js"></script>
+    <script>
+      const box = document.querySelector(".box");
+      let i = 0; // 让这个变量++
+      // 鼠标移动函数
+      function mouseMove() {
+        box.innerHTML = ++i;
+        // 如果里面存在大量操作 dom 的情况，可能会卡顿
+      }
+      // console.log(mouseMove)
+      // 节流函数 throttle
+      function throttle(fn, t) {
+        let timeId = null;
+        return function () {
+          if (timeId === null) {
+            timeId = setTimeout(function () {
+              // 定时器，500ms调用一次fn()函数
+              fn();
+              // 函数执行一次后，把定时器变量timeId设置为null，鼠标移动后再次开启定时器，500ms后执行函数
+              timeId = null;
+            }, t);
+          }
+        };
+      }
+      box.addEventListener("mousemove", throttle(mouseMove, 500));
+      // lodash实现节流
+      // box.addEventListener("mousemove", _.throttle(mouseMove, 500));
+
+      // throttle(mouseMove, 500) === function () { console.log(1) }
+
+      // box.addEventListener('mousemove', function () {
+      //   // 得到当前的时间
+      //   let now = Date.now()
+      //   // 判断如果大于等于 500 采取调用函数
+      //   if (now - startTime >= t) {
+      //     // 调用函数
+      //     fn()
+      //     // 起始的时间 = 现在的时间   写在调用函数的下面
+      //     startTime = now
+      //   }
+      // })
+    </script>
+  </body>
+</html>

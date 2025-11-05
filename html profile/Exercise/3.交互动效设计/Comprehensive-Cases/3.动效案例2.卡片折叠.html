@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=d, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      ul,
+      ol {
+        list-style: none;
+      }
+      .box {
+        overflow: hidden;
+        max-width: 1320px;
+        height: 527px;
+        margin: 100px auto;
+      }
+      .box ul {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        grid-template-rows: 527px;
+        gap: 8px;
+        transition: all 0.5s;
+      }
+      .box .item {
+        position: relative;
+        background: url(../img3/pic1.jpg) no-repeat 50% / cover;
+        /* 缩放50% */
+      }
+      .box .item:nth-child(2) {
+        background-image: url(../img3/pic2.jpg);
+      }
+      .box .item:nth-child(3) {
+        background-image: url(../img3/pic3.jpg);
+      }
+      .box .item:nth-child(4) {
+        background-image: url(../img3/pic4.jpg);
+      }
+      /*鼠标经过小Li，让父亲 ul 修改里面的份数  has父亲选择器*/
+      /*当我们鼠标经过了第1个小li（.item）的时候，选择父亲 ul*/
+      .box ul:has(.item:nth-child(1):hover) {
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+      }
+      /*当我们鼠标经过了第2个小li（.item）的时候，选择父亲 ul*/
+      .box ul:has(.item:nth-child(2):hover) {
+        grid-template-columns: 1fr 2fr 1fr 1fr;
+      }
+      /*当我们鼠标经过了第3个小li（.item）的时候，选择父亲 ul*/
+      .box ul:has(.item:nth-child(3):hover) {
+        grid-template-columns: 1fr 1fr 2fr 1fr;
+      }
+      /*当我们鼠标经过了第4个小li（.item）的时候，选择父亲 ul*/
+      .box ul:has(.item:nth-child(4):hover) {
+        grid-template-columns: 1fr 1fr 1fr 2fr;
+      }
+      .item p {
+        position: absolute;
+        bottom: -100px;
+        left: 0;
+        color: #fff;
+        padding: 20px;
+      }
+      /* 鼠标经过 .item 里面的 p 升上来 */
+      .item:hover p {
+        bottom: 0;
+        transition: all 0.5s;
+      }
+      /* 新知识： */
+      /* has(选择器； */
+      /* ：has(）允许你“根据子元素的特征反向选择父元素”也被称为“父选择器”或“存在选择器” */
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <ul>
+        <li class="item">
+          <p>超长质保</p>
+        </li>
+        <li class="item">
+          <p>超长质保</p>
+        </li>
+        <li class="item">
+          <p>超长质保</p>
+        </li>
+        <li class="item">
+          <p>超长质保</p>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

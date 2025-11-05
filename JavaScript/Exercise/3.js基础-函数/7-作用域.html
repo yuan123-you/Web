@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let num = 20; //全局变量
+      function getSum() {
+        document.writeln(num);
+      }
+      function getSum1() {
+        let num1 = 10; //局部变量
+        document.writeln(num1);
+      }
+      getSum();
+      getSum1();
+      document.writeln(num1); //错误 //num1是局部变量，出了作用域就失效了
+    </script>
+  </body>
+</html>

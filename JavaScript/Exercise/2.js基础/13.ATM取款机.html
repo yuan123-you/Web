@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let money = 10000;
+      while (true) {
+        let i = Number(
+          prompt(`请您选择操作:\n1.存钱\n2.取钱\n3.查看余额\n4.退出\n`)
+        );
+        switch (i) {
+          case 1:
+            money -= Number(prompt("请输入存款金额："));
+            break;
+          case 2:
+            let qu = Number(prompt("请输入取款金额："));
+            if (qu > money) {
+              alert(`余额不足，当前余额为${money}元！`);
+            } else {
+              money += qu;
+            }
+            break;
+          case 3:
+            alert(`当前总金额为：${money}元`);
+            break;
+          case 4:
+            exit(0);
+        }
+      }
+    </script>
+  </body>
+</html>

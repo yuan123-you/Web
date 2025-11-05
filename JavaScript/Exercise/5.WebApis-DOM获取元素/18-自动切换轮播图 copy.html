@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>轮播图点击切换</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .slider {
+        width: 560px;
+        height: 400px;
+        overflow: hidden;
+      }
+      .slider-wrapper {
+        width: 100%;
+        height: 320px;
+      }
+      .slider-wrapper img {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+      .slider-footer {
+        height: 80px;
+        background-color: rgb(100, 67, 68);
+        padding: 12px 12px 0 12px;
+        position: relative;
+      }
+      .slider-footer .toggle {
+        position: absolute;
+        right: 0;
+        top: 12px;
+        display: flex;
+      }
+      .slider-footer .toggle button {
+        margin-right: 12px;
+        width: 28px;
+        height: 28px;
+        appearance: none;
+        border: none;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .slider-footer .toggle button:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+      .slider-footer p {
+        margin: 0;
+        color: #fff;
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+      .slider-indicator {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        align-items: center;
+      }
+      .slider-indicator li {
+        width: 8px;
+        height: 8px;
+        margin: 4px;
+        border-radius: 50%;
+        background: #fff;
+        opacity: 0.4;
+        cursor: pointer;
+      }
+      .slider-indicator li.active {
+        width: 12px;
+        height: 12px;
+        opacity: 1;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="slider">
+      <div class="slider-wrapper">
+        <img src="./images/slider01.jpg" alt="" />
+      </div>
+      <div class="slider-footer">
+        <p>对人类来说会不会太超前了？</p>
+        <ul class="slider-indicator">
+          <li class="active"></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+        <div class="toggle">
+          <button class="prev">&lt;</button>
+          <button class="next">&gt;</button>
+        </div>
+      </div>
+    </div>
+    <!-- js -->
+    <script>
+      // 1. 初始数据
+      const sliderData = [
+        {
+          url: "./images/slider01.jpg",
+          title: "对人类来说会不会太超前了？",
+          color: "rgb(100, 67, 68)",
+        },
+        {
+          url: "./images/slider02.jpg",
+          title: "开启剑与雪的黑暗传说！",
+          color: "rgb(43, 35, 26)",
+        },
+        {
+          url: "./images/slider03.jpg",
+          title: "真正的jo厨出现了！",
+          color: "rgb(36, 31, 33)",
+        },
+        {
+          url: "./images/slider04.jpg",
+          title: "李玉刚：让世界通过B站看到东方大国文化",
+          color: "rgb(139, 98, 66)",
+        },
+        {
+          url: "./images/slider05.jpg",
+          title: "快来分享你的寒假日常吧~",
+          color: "rgb(67, 90, 92)",
+        },
+        {
+          url: "./images/slider06.jpg",
+          title: "哔哩哔哩小年YEAH",
+          color: "rgb(166, 131, 143)",
+        },
+        {
+          url: "./images/slider07.jpg",
+          title: "一站式解决你的电脑配置问题！！！",
+          color: "rgb(53, 29, 25)",
+        },
+        {
+          url: "./images/slider08.jpg",
+          title: "谁不想和小猫咪贴贴呢！",
+        },
+      ];
+      //一、获取选择器元素
+      //2.获取图片元素
+      const img = document.querySelector(".slider-wrapper img");
+      //4.获取p标签元素
+      const p = document.querySelector(".slider-footer p");
+      //6.获取slider-footer类选择器的div标签
+      const box = document.querySelector(".slider-footer");
+      //按钮事件
+      const left = document.querySelector(".prev");
+      const right = document.querySelector(".next");
+      //二、定义全局变量
+      // 记录数组下标
+      let count = 0;
+      //定义定时器变量
+      let n = 0;
+      //三、声明切换复用函数，减少重复代码
+      function common() {
+        //3.改变图片元素路径
+        img.src = sliderData[count].url;
+        //5.改变p标签文字
+        p.innerHTML = sliderData[count].title;
+        //7.改变盒子背景色
+        box.style.backgroundColor = sliderData[count].color;
+        //8.删除li里面的.active
+        document
+          .querySelector(`.slider-indicator .active`)
+          .classList.remove("active");
+        //9.为li的小圆点添加类名
+        document
+          .querySelector(`.slider-indicator li:nth-child(${count + 1})`)
+          .classList.add("active");
+      }
+      //四、声明定时器函数---定义定时器-自动轮播
+      function my_setInterval() {
+        n = setInterval(function () {
+          // 利用js自动调用点击事件 click() 一定加小括号调用函数
+          right.click();
+        }, 1000);
+      }
+      //五、调用函数，开启定时器，自动轮播
+      my_setInterval();
+      //六、鼠标经过事件-开关定时器
+      //6.1.鼠标经过事件-关闭定时器
+      const slider = document.querySelector(".slider");
+      slider.addEventListener("mouseenter", function () {
+        clearInterval(n);
+      });
+      //6.2.鼠标离开事件-开启定时器
+      slider.addEventListener("mouseleave", function () {
+        // clearInterval(n);
+        //调用函数，开启定时器，自动轮播
+        my_setInterval();
+      });
+      //七、鼠标点击事件，切换图片等元素
+      //7.1左侧鼠标点击事件
+      left.addEventListener("click", function () {
+        count--;
+        count = count < 0 ? sliderData.length - 1 : count;
+        common();
+      });
+      //7.2右侧鼠标点击事件
+      right.addEventListener("click", function () {
+        count++;
+        count %= sliderData.length;
+        common();
+      });
+    </script>
+  </body>
+</html>

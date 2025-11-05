@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- CSS3的animation是一种通过定义关键帧和动画属性来实现元素动态效果的技术。。
+    优势：
+    性能高效：通过浏览器原生支持，利用GPU加速渲染，避免频繁的JavaScript计算开销。
+    代码简洁：解决了传统CSS过渡（transition）只能定义两帧状态的局限性。可以利用关键帧实现更复杂动画。
+    交互增强：支持与用户操作（如悬停、点击）结合，提升网页的动态表现力和用户体验。CSS3的animation是一种通过定义关键帧和动画属性来实现元素动态
+    效果的技术。。
+    关键帧:
+    关键帧（Keyframes）是动画和视频制作中用于定义动作或状态变化的核心节点，它决定了动画的起始、转折和结束状态。中
+    间帧（插帧）通过算法自动生成，形成连贯的动画效果。 -->
+    <style>
+      /* 1.定义动画 */
+      /* @keyframes move { */
+      /* 0% { */
+      /* transform: translate(0, 0); */
+      /* background-color: skyblue; */
+      /* } */
+      /* 100% { */
+      /* transform: translate(500px, 500px); */
+      /* background-color: pink; */
+      /* } */
+      /* } */
+      @keyframes move {
+        0% {
+          transform: translate(0, 0);
+          background-color: skyblue;
+        }
+        25% {
+          transform: translate(300px, 0);
+        }
+        50% {
+          transform: translate(300px, 500px);
+          /* translate是依据元素的原始位置进行位移的 */
+          background-color: pink;
+        }
+        75% {
+          transform: translate(0, 500px);
+        }
+        100% {
+          transform: translate(0, 0);
+          background-color: orange;
+        }
+      }
+      /* 2.使用动画 */
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: skyblue;
+        animation: move 4s;
+        /* animation: move 2s linear infinite alternate; */
+        /* 1.动画名称
+            2.动画时长
+            3.动画节奏函数(默认，可以不写)
+            4.动画播放次数(默认，可以不写)
+            5.动画播放方向(默认，可以不写) */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+  </body>
+</html>

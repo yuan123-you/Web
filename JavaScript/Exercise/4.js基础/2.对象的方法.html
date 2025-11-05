@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let obj = {
+        uname: "刘德华",
+        age: 48,
+        song: function (x, y) {
+          document.writeln("恭喜发财");
+          document.writeln(x + y);
+        },
+        dance: function (x, y) {
+          document.writeln("唱跳rap");
+          document.writeln(x * y);
+        },
+      };
+      document.writeln(obj.song(10, 20));
+      document.writeln(obj.dance(6, 7));
+    </script>
+  </body>
+</html>

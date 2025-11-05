@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>rem适配方案和插件使用</title>
+    <!-- 设计稿转换公式：
+rem值=设计稿元素尺寸/html的font-size（基准值）
+天
+(106/ 37.5)=2.826 rem -->
+    <!-- 方式4：转换插件（目前阶段）
+1.Flexible.js实现动态修改html 根字号大小
+2.利用插件实现px转换为rem单位 -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .box {
+        width: 2.8267rem;
+        height: 2.8267rem;
+        margin-top: 0.5333rem;
+        background-color: pink;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box"></div>
+    <script src="../移动端-优医问诊项目/js/flexible.js"></script>
+  </body>
+</html>

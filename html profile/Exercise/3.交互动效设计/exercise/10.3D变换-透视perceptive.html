@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- /* 语法： perspective：1000px；透视效果 数值越小，透视效果越强。 -->
+    <!-- 给父元素添加，里面所有子元素都会添加透视效果。（常用） -->
+    <!-- 给子元素添加，当前元素添加透视效果。 transform：perspective(1000px) -->
+    <!-- rotateX(45deg);同时使用多个属性 -->
+    <!-- 注意：perspective()必须作为transform属性的第一个函数（否则无效） */ -->
+    <style>
+      /* 给父元素添加透视效果 */
+      /* body { */
+      /* perspective: 500px; */
+      /* } */
+      img {
+        display: block;
+        margin: 0 auto;
+        width: 230px;
+        transition: all 0.5s;
+      }
+      .ldhx {
+        transform: rotateX(-30deg);
+      }
+      /* 给:hover子元素添加透视效果，但是一定要写在最前面 */
+      .ldhy:hover {
+        transform: perspective(1000px) rotateY(360deg);
+      }
+      .ldhz {
+        transform: rotateZ(30deg);
+      }
+    </style>
+  </head>
+  <body>
+    <img src="../img3/ldhx.png" alt="" class="ldhx" />
+    <br />
+    <img src="../img3/ldhy.jpg" alt="" class="ldhy" />
+    <br />
+    <img src="../img3/ldhz.webp" alt="" class="ldhz" />
+  </body>
+</html>

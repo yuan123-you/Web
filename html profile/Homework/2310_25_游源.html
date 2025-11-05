@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      a {
+        text-decoration: none;
+      }
+      li {
+        list-style: none;
+      }
+      @keyframes move1 {
+        0% {
+          background-color: skyblue;
+        }
+        100% {
+          background-color: yellow;
+        }
+      }
+      @keyframes move2 {
+        0% {
+          background-color: green;
+        }
+        100% {
+          background-color: red;
+        }
+      }
+      @keyframes move3 {
+        0% {
+          background-color: blue;
+        }
+        100% {
+          background-color: orange;
+        }
+      }
+      .box {
+        text-align: center;
+        color: #fff;
+        font-size: 20px;
+        width: 100%;
+        transition: all 0.3s;
+      }
+      .box1 {
+        background-color: skyblue;
+        height: 50px;
+        width: 100%;
+      }
+      .box1 .nav {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        color: #000;
+      }
+      .box1 .nav > li {
+        width: 150px;
+        height: 100%;
+      }
+      .box1 .nav .nav-son {
+        position: relative;
+        top: 0;
+        left: 25px;
+        display: none;
+        background-color: pink;
+        width: 100px;
+        text-align: center;
+        align-items: center;
+      }
+      .box1 .nav > li:hover .nav-son {
+        display: block;
+      }
+      .box2 {
+        line-height: 200px;
+        height: 200px;
+        animation: move1 2s linear infinite;
+      }
+      .box3 {
+        line-height: 200px;
+
+        height: 200px;
+        animation: move2 3s linear infinite;
+      }
+      .box4 {
+        line-height: 200px;
+
+        height: 200px;
+        animation: move3 4s linear infinite;
+      }
+      .footer {
+        /* 固定定位 */
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50px;
+        background-color: purple;
+        line-height: 50px;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1">
+      <ul class="nav">
+        <li>
+          网站首页
+          <ul class="nav-son">
+            <li>222</li>
+            <li>222</li>
+            <li>222</li>
+          </ul>
+        </li>
+        <li>
+          关于我们
+          <ul class="nav-son">
+            <li>222</li>
+            <li>222</li>
+            <li>222</li>
+          </ul>
+        </li>
+        <li>
+          新闻页面
+          <ul class="nav-son">
+            <li>222</li>
+            <li>222</li>
+            <li>222</li>
+          </ul>
+        </li>
+        <li>
+          服务模块
+          <ul class="nav-son">
+            <li>222</li>
+            <li>222</li>
+            <li>222</li>
+          </ul>
+        </li>
+        <li>
+          联系方式
+          <ul class="nav-son">
+            <li>222</li>
+            <li>222</li>
+            <li>222</li>
+          </ul>
+        </li>
+        <li>
+          关于我们
+          <ul class="nav-son">
+            <li>222</li>
+            <li>222</li>
+            <li>222</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="box box2">123456789</div>
+    <div class="box box3">123456789</div>
+    <div class="box box4">123456789</div>
+    <div class="box footer">tencent 因为有你</div>
+  </body>
+</html>

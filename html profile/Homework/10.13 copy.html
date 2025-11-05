@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      a {
+        text-decoration: none;
+      }
+      li {
+        list-style: none;
+      }
+      .box {
+        background-color: blue;
+        height: 50px;
+        width: 100%;
+      }
+      .box .nav {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        color: #fff;
+      }
+      .box .nav > li {
+        width: 150px;
+        height: 100%;
+      }
+      .box .nav .nav-son {
+        position: relative;
+        top: 0;
+        left: 25px;
+        display: none;
+        background-color: pink;
+        width: 100px;
+        text-align: center;
+        align-items: center;
+      }
+      .box .nav > li:hover .nav-son {
+        display: block;
+      }
+      .box2 {
+        width: 100%;
+        height: 100px;
+        background-color: skyblue;
+      }
+      .box3 {
+        width: 100%;
+        height: 100px;
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <ul class="nav">
+        <li>
+          网站首页
+          <ul class="nav-son">
+            <li>222</li>
+            <li>222</li>
+            <li>222</li>
+          </ul>
+        </li>
+        <li>
+          关于我们
+          <ul class="nav-son">
+            <li>222</li>
+            <li>222</li>
+            <li>222</li>
+          </ul>
+        </li>
+        <li>
+          新闻页面
+          <ul class="nav-son">
+            <li>222</li>
+            <li>222</li>
+            <li>222</li>
+          </ul>
+        </li>
+        <li>
+          服务模块
+          <ul class="nav-son">
+            <li>222</li>
+            <li>222</li>
+            <li>222</li>
+          </ul>
+        </li>
+        <li>
+          联系方式
+          <ul class="nav-son">
+            <li>222</li>
+            <li>222</li>
+            <li>222</li>
+          </ul>
+        </li>
+        <li>
+          关于我们
+          <ul class="nav-son">
+            <li>222</li>
+            <li>222</li>
+            <li>222</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+  </body>
+</html>

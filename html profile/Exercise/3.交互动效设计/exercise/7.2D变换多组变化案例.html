@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 1000px;
+        height: 100px;
+        border: 1px solid #000;
+      }
+      img {
+        width: 100px;
+        transition: all 2s;
+      }
+      .box:hover img {
+        transform: translateX(600px) rotate(360deg);
+      }
+      /* 在CSs中，transform属性的复合写法（多个变换函数组合使用）
+语法:
+transform: A(T B() C);
+顺序：
+核心规则：从右到左的执行顺序
+实际的执行顺序是：先执行最右侧的C)，然后是B(，最后是左侧的A)。 */
+    </style>
+  </head>
+  <body>
+    <div class="box"><img src="../img3/wj.webp" alt="" /></div>
+  </body>
+</html>

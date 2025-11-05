@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 坐标数值：
+    X轴代表左右方向。右边是正值，坐标是负值。
+    Y轴代表上下方向。下方是正值，上方是负值。
+    Z轴代表远离/接近屏幕的方向。接近屏幕是正值，远离屏幕是负值。
+    可以利用左手法则记忆。
+    默认情况下，元素在二维平面上呈现，Z轴值为0。
+    <!-- 当应用3D变换时，元素便可以在三维空间中自由变换。  -->
+    <style>
+      img {
+        width: 230px;
+        transition: all 0.3s;
+      }
+      .ldhx:hover {
+        transform: rotateX(360deg);
+        /* 绕X轴旋转度 */
+      }
+      .ldhy:hover {
+        transform: rotateY(360deg);
+        /* 绕Y轴旋转 */
+      }
+      .lhdz:hover {
+        transform: rotateZ(360deg);
+        /* 绕Z轴旋转 */
+      }
+    </style>
+  </head>
+  <body>
+    <img src="../img3/ldhx.png" alt="" class="ldhx" />
+    <br />
+    <img src="../img3/ldhy.jpg" alt="" class="ldhy" />
+    <br />
+    <img src="../img3/ldhz.webp" alt="" class="lhdz" />
+  </body>
+</html>

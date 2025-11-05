@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 2.2本地存储分类-localstorage
+  目标：能够使用localstorage把数据存储的浏览器中
+  作用：可以将数据永久存储在本地（用户的电脑），除非手动删除，否则关闭页面也会存在
+  特性：
+  可以多窗口（页面）共享（同一浏览器可以共享）
+  以键值对的形式存储使用 -->
+    <!-- 2.2本地存储分类-localstorage
+  语法：
+  存储数据：
+  localStorage.setItem(key, value)
+  获取数据：
+  localStorage.getItem(key)
+  删除数据：
+  localStorage.removeItem(key) -->
+  </head>
+  <body>
+    <script>
+      // localStorage.setItem("键", "值");
+      //1.存储数据
+      localStorage.setItem("uname", "youyuan");
+      //2.获取数据
+      let uname = localStorage.getItem("uname");
+      //打印获取的数据
+      console.log(uname);
+      //3.删除数据
+      localStorage.removeItem("uname");
+      //1.存储数据
+      localStorage.setItem("uname", "youyuan");
+      //4.改变数据  如果原来有这个键，就是改  没有这个键，就是增加数据
+      localStorage.setItem("uname", "游源");
+      //5.本地存储只能存储字符串数据类型
+      localStorage.setItem("age", 18);
+      console.log(localStorage.getItem("age"));
+    </script>
+  </body>
+</html>

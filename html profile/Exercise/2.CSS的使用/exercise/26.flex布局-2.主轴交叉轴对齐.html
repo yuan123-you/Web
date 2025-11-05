@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* justify-content定义主轴上的对齐方式 */
+        .box1{
+            display: flex;
+            width: 600px;
+            height: 100px;
+            border: 1px solid #000;
+            justify-content: center;
+            /* 居中对齐 */
+        }
+        .b1{
+            width: 100px;
+            background-color: pink;
+        }
+
+        .box2{
+            display: flex;
+            width: 600px;
+            height: 100px;
+            border: 1px solid #000;
+            justify-content: flex-start;
+            /* 左对齐 */
+        }
+        .b2{
+            width: 100px;
+            background-color: pink;
+        }     
+
+        .box3{
+            display: flex;
+            width: 600px;
+            height: 100px;
+            border: 1px solid #000;
+            justify-content: flex-end;
+            /* 右对齐 */
+        }
+        .b3{
+            width: 100px;
+            background-color: pink;
+        }      
+
+        .box4{
+            display: flex;
+            width: 600px;
+            height: 100px;
+            border: 1px solid #000;
+            justify-content: space-between;
+            /* 两端对齐 首个子元素放置于起点，末尾元素放置于终点*/
+        }
+        .b4{
+            width: 100px;
+            background-color: pink;
+        }
+
+        .box5{
+            display: flex;
+            width: 600px;
+            height: 100px;
+            border: 1px solid #000;
+            justify-content: space-around;
+            /* 项目两侧间隔相等  每个子元素周围分配相同的空间 */
+        }
+        .b5{
+            width: 100px;
+            background-color: pink;
+        }
+
+        .box6{
+            display: flex;
+            width: 600px;
+            height: 100px;
+            border: 1px solid #000;
+            justify-content: space-evenly;
+            /* 项目间隔均匀分布  每个子元素之间的间隔相等 */
+        }
+        .b6{
+            width: 100px;
+            background-color: pink;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="b1">1</div>
+        <div class="b1">2</div>
+        <div class="b1">3</div>
+        <div class="b1">4</div>
+    </div>
+    <div class="box2">
+        <div class="b2">1</div>
+        <div class="b2">2</div>
+        <div class="b2">3</div>
+        <div class="b2">4</div>
+    </div>
+    <div class="box3">
+        <div class="b3">1</div>
+        <div class="b3">2</div>
+        <div class="b3">3</div>
+        <div class="b3">4</div>
+    </div>
+    <div class="box4">
+        <div class="b4">1</div>
+        <div class="b4">2</div>
+        <div class="b4">3</div>
+        <div class="b4">4</div>
+    </div>
+    <div class="box5">
+        <div class="b5">1</div>
+        <div class="b5">2</div>
+        <div class="b5">3</div>
+        <div class="b5">4</div>
+    </div>
+    <div class="box6">
+        <div class="b6">1</div>
+        <div class="b6">2</div>
+        <div class="b6">3</div>
+        <div class="b6">4</div>
+    </div>
+</body>
+</html>

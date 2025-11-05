@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 容器(父盒子)设置display:grid;（块级）或者display:inline-grid（行内）
+    与弹性盒子不同的是，在定义网格后，网页并不会马上发生变化。因为display：
+    grid的声明只创建了一个只有一列的网格 -->
+    <!-- 绘制网格：（网格轨道）
+    grid-template-columns定义网格中的列
+    grid-template-rows定义网格中的行
+    属性值：
+    有几个属性值代表创建几列/行
+    长度单位 比如 100px -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        display: grid;
+        width: 320px;
+        height: 320px;
+        /* 把网格分成三列 */
+        grid-template-columns: 100px 100px 100px;
+        /* 把网格分成三行 */
+        grid-template-rows: 100px 100px 100px;
+        /* 设置网格的水平对齐方式 */
+        justify-content: space-between;
+        /* 设置网格的垂直对齐方式 */
+        align-content: space-between;
+        border: 1px solid #000;
+        margin: 20px auto;
+      }
+      .container .item {
+        background-color: pink;
+        text-align: center;
+      }
+      .content {
+        display: grid;
+        /* 指定网格列轨道 */
+        grid-template-columns: 160px 160px 160px 160px 160px 160px;
+        /* 列轨道两端对齐 */
+        justify-content: space-between;
+        width: 1000px;
+        border: 1px solid #000;
+        margin: 0 auto;
+      }
+      .content div {
+        height: 100px;
+        border: 1px solid #000;
+        background-color: lightblue;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item item1">1</div>
+      <div class="item item2">2</div>
+      <div class="item item3">3</div>
+      <div class="item item4">4</div>
+      <div class="item item5">5</div>
+      <div class="item item6">6</div>
+      <div class="item item7">7</div>
+      <div class="item item8">8</div>
+      <div class="item item9">9</div>
+    </div>
+    <div class="content">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </body>
+</html>

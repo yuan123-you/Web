@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .box1 {
+        width: 80px;
+        height: 50px;
+        margin: 5px;
+        background-color: pink;
+      }
+      .container {
+        display: flex;
+        align-items: center;
+        width: 50%;
+        height: 70px;
+        background-color: skyblue;
+        margin: 0 auto;
+        margin-bottom: 10px;
+      }
+      .container1 {
+        justify-content: center;
+        /* 水平居中 */
+      }
+      .container2 {
+        justify-content: space-between;
+        /* 两端对齐 */
+      }
+      .container3 {
+        justify-content: space-around;
+        /* 两端对齐，每个盒子左右外边距相同 */
+      }
+      .container4 {
+        justify-content: space-evenly;
+        /* 两端对齐，每个盒子间隙相同 */
+      }
+      .container5 {
+        justify-content: flex-end;
+        /* 右端对齐 */
+      }
+      .container6 {
+        justify-content: flex-start;
+        /* 左端对齐 */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container container1">
+      <div class="box1">1</div>
+      <div class="box1">2</div>
+      <div class="box1">3</div>
+      <div class="box1">4</div>
+      <div class="box1">5</div>
+    </div>
+    <div class="container container2">
+      <div class="box1">1</div>
+      <div class="box1">2</div>
+      <div class="box1">3</div>
+      <div class="box1">4</div>
+      <div class="box1">5</div>
+    </div>
+    <div class="container container3">
+      <div class="box1">1</div>
+      <div class="box1">2</div>
+      <div class="box1">3</div>
+      <div class="box1">4</div>
+      <div class="box1">5</div>
+    </div>
+    <div class="container container4">
+      <div class="box1">1</div>
+      <div class="box1">2</div>
+      <div class="box1">3</div>
+      <div class="box1">4</div>
+      <div class="box1">5</div>
+    </div>
+    <div class="container container5">
+      <div class="box1">1</div>
+      <div class="box1">2</div>
+      <div class="box1">3</div>
+      <div class="box1">4</div>
+      <div class="box1">5</div>
+    </div>
+    <div class="container container6">
+      <div class="box1">1</div>
+      <div class="box1">2</div>
+      <div class="box1">3</div>
+      <div class="box1">4</div>
+      <div class="box1">5</div>
+    </div>
+  </body>
+</html>

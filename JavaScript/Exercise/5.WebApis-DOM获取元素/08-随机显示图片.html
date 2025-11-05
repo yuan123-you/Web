@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img src="./images/1.webp" alt="" />
+    <script>
+      //声明一个随机数函数
+      //得到start-end的随机数
+      function getRandom(start, end) {
+        return Math.floor(Math.random() * (end - start + 1) + start);
+      }
+      //1.获取图像元素
+      const img1 = document.querySelector("img");
+      //2.调用随机数函数
+      const random = getRandom(1, 6);
+      //3.修改图像元素路径
+      console.log(img1.src);
+      img1.src = `./images/${random}.webp`;
+    </script>
+  </body>
+</html>

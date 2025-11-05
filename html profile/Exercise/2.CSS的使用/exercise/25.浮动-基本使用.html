@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 特点：浮动后的盒子顶对齐
+                浮动后的盒子具备行内块特点
+                浮动后的盒子脱标，不占用标准流的位置 */
+        .div1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            float: left;
+            /* 左浮动 */
+        }
+        .div2{
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            float: left;
+        }
+        .div3{
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+            float: right;
+            /* 右浮动 */
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">div1</div>
+    <div class="div2">div2</div>
+    <div class="div3">div3</div>
+    <div class="div3">div3</div>
+</body>
+</html>

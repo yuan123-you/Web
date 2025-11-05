@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function getSum2(end) {
+        let sum = 0;
+        for (let i = 0; i <= end; i++) {
+          sum += i;
+        }
+        document.writeln(`0-${end}的和为：${sum}`);
+      }
+      getSum2(50);
+      document.writeln("<br>");
+      getSum2(100);
+      document.writeln("<br>");
+      function getSum1(x = 0, y = 0) {
+        //给函数形参设置默认值
+        document.writeln(x + y);
+      }
+      getSum1(1, 2);
+      document.writeln("<br>");
+      getSum1();
+      document.writeln("<br>");
+      function getSum3(start, end) {
+        //形参-形式参数
+        let sum = 0;
+        for (let i = start; i <= end; i++) {
+          sum += i;
+        }
+        document.writeln(`${start}-${end}的和为：${sum}`);
+      }
+      getSum3(1, 50); //实参-实际参数
+      document.writeln("<br>");
+      getSum3(100, 200); //实参-实际参数
+    </script>
+  </body>
+</html>

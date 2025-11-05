@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .right {
+        color: green;
+        background: url(./images/right.png) no-repeat left center;
+      }
+      .error {
+        color: red;
+        background: url(./images/error1.png) no-repeat left center;
+      }
+      span {
+        vertical-align: middle;
+        padding-left: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" name="" id="" />
+    <span></span>
+    <script>
+      // 定义正则表达式
+      const reg = /^[0-9a-zA-Z-_]{6,16}$/;
+      // 获取元素
+      const input = document.querySelector("input");
+      const span = document.querySelector("span");
+      // 给表单添加失去焦点事件 blur失去焦点
+      input.addEventListener("blur", function () {
+        if (reg.test(input.value)) {
+          // 如果正确，为span添加right类和内容
+          span.innerHTML = "输入正确";
+          span.classList.add("right");
+        } else {
+          // 否则错误，为span添加error类和内容
+          span.innerHTML = "请输入6-16位字母,数字,下划线";
+          span.classList.add("error");
+        }
+      });
+    </script>
+  </body>
+</html>

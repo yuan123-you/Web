@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const arr = [100, 60, 80];
+      //数组解构
+      const [max, min, avg] = arr;
+      console.log(max);
+      console.log(min);
+      console.log(avg);
+      let a = 1;
+      let b = 2;
+      [b, a] = [a, b];
+      console.log(a, b);
+      console.log("--------------------");
+      const pc = ["海尔", "联想", "小米", "方正"];
+      const [hr, lx, mi, fz] = pc;
+      console.log(hr, lx, mi, fz);
+      console.log("--------------------");
+
+      function getValue() {
+        return [100, 60];
+      }
+      const [max1, min1] = getValue();
+      console.log(max1, min1);
+    </script>
+  </body>
+</html>

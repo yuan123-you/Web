@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //0-10随机数
+      document.writeln(Math.floor(Math.random() * (10 + 1)));
+      // 5-10随机数
+      document.writeln(Math.floor(Math.random() * (5 + 1) + 5));
+      // M - N随机数
+      function random1(M, N) {
+        document.writeln(Math.floor(Math.random() * (N - M + 1) + M));
+      }
+      random1(3, 5);
+      //数组随机
+      let arr = ["green", "pink", "skyblue", "orange", "black"];
+      document.writeln(arr[Math.floor(Math.random() * arr.length)]);
+    </script>
+  </body>
+</html>

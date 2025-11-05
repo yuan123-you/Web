@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <button id="refresh">111</button>
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const button = document.getElementById("click");
+
+      function fn() {
+        let arr = ["赵云", "黄忠", "关羽", "张飞", "马超"];
+        let random = Math.floor(Math.random() * arr.length);
+        document.writeln(arr[random]);
+      }
+      //splice(起始位置（下标），删除几个元素)
+      // arr.splice(random,1);
+      button.addEventListener("click", fn);
+    </script>
+  </body>
+</html>

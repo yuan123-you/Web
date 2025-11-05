@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 1.1事件监听
+  语法：
+  元素对象.addEventListener('事件类型'，要执行的函数）
+  事件监听三要素：
+  事件源：那个dom元素被事件触发了，要获取dom元素
+  事件类型：用什么方式触发，比如鼠标单击click、鼠标经过mouseover等
+  事件调用的函数：要做什么事 -->
+  </head>
+
+  <body>
+    <button>点击</button>
+    <script>
+      const btn = document.querySelector("button");
+      btn.addEventListener("click", function () {
+        prompt("请输入充值金额");
+      });
+    </script>
+  </body>
+</html>

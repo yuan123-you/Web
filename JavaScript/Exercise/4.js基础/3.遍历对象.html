@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 一般不用这种方式遍历数组、主要是用来遍历对象
+    for in语法中的k是一个变量，在循环的过程中依次代表对象的属性名
+    由于k是变量，所以必须使用[]语法解析
+    一定记住：k是获得对象的属性名，对象名[k]是获得属性值 -->
+    <script>
+      //for in
+      //1.遍历对象 for in
+      let obj = {
+        uname: "John",
+        age: 21,
+        gender: "男",
+      };
+      //2.遍历对象
+      for (let k in obj) {
+        document.writeln(`${obj[k]}<br>`);
+      }
+    </script>
+  </body>
+</html>

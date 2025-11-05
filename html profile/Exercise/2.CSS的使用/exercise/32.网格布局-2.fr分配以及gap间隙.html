@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .box {
+        display: grid;
+        width: 300px;
+        height: 300px;
+        /* 定义网格列轨道, 把每个容器分成三列，各占一份*/
+        grid-template-columns: 1fr 1fr 1fr;
+        /* 定义网格行轨道, 把每个容器分成三行，各占一份*/
+        grid-template-rows: 1fr 1fr 1fr;
+        /* 设置网格间隙 */
+        gap: 10px;
+        /* 网格布局中的gap语法 */
+        /* 行和列设置间隙 */
+        /* gap：20px; */
+        /* 行间隙20px，列间隙10px */
+        /* gap: 20px 10px; */
+        /* 分别设置行间隙和列间隙 */
+        /* row-gap: 20px; */
+        /* column-gap: 10px; */
+      }
+      .box .item {
+        background-color: lightblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+      <div class="item">7</div>
+      <div class="item">8</div>
+      <div class="item">9</div>
+    </div>
+  </body>
+</html>

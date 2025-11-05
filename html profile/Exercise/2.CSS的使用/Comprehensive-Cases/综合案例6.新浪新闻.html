@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #f2f2f2; 
+            /* 给父级设置默认背景颜色 */
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* 清除默认样式 */
+        }
+        li{
+            list-style: none;
+            /* 清除默认样式 */
+        }
+        a{
+            text-decoration: none;
+            /* 清除默认样式 */
+        }
+        .news{
+            width: 360px;
+            height: 200px;
+            background-color: white;
+            margin: 100px auto;
+            /* 上下外边距100px 左右外边距自动（居中对齐） */
+        }
+        .news .div1{
+            height: 34px;
+            background-color: #eee;
+            border: 1px solid #dbdee1;
+            /* 边框: 边框线像素 边框线样式 边框线颜色 */
+            border-left: none;
+        }
+        .news .div1 a{
+            margin-top: -1px;
+            /* 外边距-1  向上移动1px */
+            display: inline-block;
+            /* 行内块 可以调整宽高 */
+            width: 48px;
+            height: 33.5px;
+            background-color: #fff;
+            border-top: 3px solid  #ff8400;
+            border-right: 1px solid #dbdee1;
+
+            text-align: center;
+            line-height: 31px;
+            font-size: 14px;
+            color: #333;
+        }
+        .news .ul{
+            padding: 5px;
+            /* 内边距 */
+        }
+        .news .ul li{
+            background-image: url(../图片素材/QQ20250927-123835.png);
+            /* 背景图片 */
+            background-repeat: no-repeat;
+            /* 背景不重复——单一背景 */
+            background-size: 6px;
+            /* 背景图片大小 */
+            background-position: 0 center;
+            /* 背景图片位置 左右位置默认 上下位置居中*/
+        }
+        .news .ul li a{
+            padding-left: 15px;
+            font-size: 12px;
+            color: #666;
+            line-height: 25px;
+        }
+        .news .ul li a:hover{
+            color: #ff8400;
+        }
+    </style>
+</head>
+<body>
+    <div class="news">
+        <div class="div1"><a href="#">新闻</a></div>
+        <div class="ul">        
+            <ul>
+                <li><a href="#">点赞“新农人”温暖的伸手</a></li>        
+                <li><a href="#">在希望的田野上...</a></li>
+                <li><a href="#">"中国天眼”又有新发现已在《自然》杂志发表</a></li>
+                <li><a href="#">急！这个领域，缺人！月薪4万元还不好招！啥情况？</a></li>
+                <li><a href="#">G9“带货”背后：亏损面持续扩大，竞争环境激烈</a></li>
+                <li><a href="#">多地力推二手房“带押过户”，有什么好处？</a></li></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

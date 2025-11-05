@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box1 {
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+        /* 元素位移 */
+        /* transform: translate(100px, 50px); */
+        /* 沿着X轴位移 */
+        /* transform: translateX(100px); */
+        /* 沿着Y轴位移 */
+        /* transform: tarnslateY(50px); */
+        /* 过渡 */
+        transition: all 0.5s;
+      }
+      /* 设置鼠标悬停位移 */
+      .box1:hover {
+        transform: translate(100px, 50px);
+        /* transform: translateX(100px); */
+        /* transform: translateY(50px); */
+      }
+      .box2 {
+        width: 200px;
+        height: 200px;
+        background-color: skyblue;
+        /* translate百分数位移，位移自身的百分之多少 */
+        transform: translateX(50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+  </body>
+</html>

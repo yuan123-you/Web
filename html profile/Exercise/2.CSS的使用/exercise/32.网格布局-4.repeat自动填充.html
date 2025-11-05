@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      /* repeat()函数
+        语法:
+        repeat(次数，轨道尺寸)或repeat(自动填充，轨道尺寸)
+        2.自动填充：适用于响应式布局中“列数随容器宽度变化”的场景。
+        auto-fill：尽可能多地创建列。
+        auto-fit：尽可能拉伸列填满容器（会合并空白，列宽不小于minmax的最小值）
+        minmax(函数
+        语法：
+        minmax(最小值，最大值)
+        minmax(200px, 1fr) 
+        区别：当容器空间远远大于所有子元素大小
+        1.auto-fill 留有空白空间。
+        2.auto-fit 会拉伸盒子占满父容器空间。*/
+      .box {
+        display: grid;
+        /* 指定网格列轨道自动填充 且盒子最小值为100像素，最大值占一等份 */
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        width: 80%;
+        height: 300px;
+        border: 2px solid #000;
+        margin: 20px auto;
+        gap: 10px;
+      }
+      .box .item {
+        height: 100 px;
+        background-color: lightblue;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+      <div class="item">7</div>
+      <div class="item">8</div>
+      <div class="item">9</div>
+    </div>
+  </body>
+</html>

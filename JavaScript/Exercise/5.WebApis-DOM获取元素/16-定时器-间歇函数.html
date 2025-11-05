@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <!-- 五、定时器-间歇函数
+目标：能够使用定时器函数重复执行代码
+定时器函数可以开启和关闭定时器
+1.开启定时器
+setInterval（函数，间隔时间）
+作用：每隔一段时间调用这个函数
+间隔时间单位是毫秒
+注意：
+1.函数名字不需要加括号
+2.定时器返回的是一个id数字 -->
+  <!-- 定时器函数可以开启和关闭定时器
+2.关闭定时器
+1et变量名=setInterval(函数，间隔时间）
+clearInterval(变量名) -->
+  <body>
+    <script>
+      // setInterval(函数, 间隔时间) 间隔时间单位是毫秒（ms）
+      // setInterval(function () {
+      //   console.log('一秒执行一次')
+      // }, 1000)
+
+      function fn() {
+        console.log("一秒执行一次");
+      }
+      // setInterval(函数名, 间隔时间)  函数名不要加小括号
+      let n = setInterval(fn, 1000);
+      // setInterval('fn()', 1000)
+      console.log(n);
+      // 关闭定时器
+      clearInterval(n);
+      //
+      let i = 1;
+      let n1 = setInterval(function () {
+        document.writeln(`${i++}`);
+      }, 1000);
+      // clearInterval(n1);
+      // let m = setInterval(function () {
+      //   console.log(11)
+      // }, 2000)
+      // console.log(m)
+
+      // const num = 10
+      // num = 10
+      // console.log(num)
+      // let i = 1;
+      // setInterval(function () {
+      // document.write(`${i} `);
+      // i++;
+      // }, 200);
+    </script>
+  </body>
+</html>

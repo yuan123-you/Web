@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box{
+width: 150px;
+height: 100px;
+padding: 10px; 
+border: 10px dotted black;
+background-image: url('./图片素材/bg3.jpg'); 
+background-repeat: no-repeat;
+background-position: center;
+}
+.cover-box {
+background-size: cover; 
+}
+.contain-box {
+background-size: contain;
+}
+.size-box{
+background-size:100% 100%;
+}
+</style>
+</head>
+<body>
+<div class="box cover-box ">cover区域
+</div>
+<div class=" box contain-box">
+contain区域
+</div>
+<div class=" box size-box">
+100%内容区域
+</div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+/* 2.公司简介 */
+.product {
+  text-align: center;
+}
+.title_text {
+  font-size: 26px;
+  font-weight: 600;
+  padding: 20px 0 20px;
+  margin-top: 50px;
+}
+.content_text {
+  font-weight: 300;
+  padding-bottom: 40px;
+}
+/* 3.企业资料模块 */
+.newman .col img {
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+.container2 .col {
+  padding: 0;
+}
+/* news Newman模块*/
+/* 子标题 */
+.subtitle_text {
+  font-size: 20px;
+  color: var(--main-blue);
+}
+/* 子文本 */
+.subcontent_text {
+  font-size: 16px;
+  color: lightslategray;
+}
+.news .news_content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.news .news_content img {
+  width: 100%;
+  height: 100%;
+}
+.news .news_content ul li .subtitle_text {
+  color: var(--main-blue);
+}
+.news .news_content ul li {
+  position: relative;
+  /* 给所有li的下面添加一条虚线边框 */
+  border-bottom: 2px dashed lightslategrey;
+}
+.news .news_content ul li span {
+  line-height: 50px;
+}
+.news .news_content ul li .right {
+  position: absolute;
+  right: 10px;
+}

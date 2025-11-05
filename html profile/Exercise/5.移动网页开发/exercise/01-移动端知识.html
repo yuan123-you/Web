@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- 1.移动端开发需要设置版心吗？
+    不需要。让我们页面宽度和移动端屏幕一样宽就行。
+    2.如何保证我们页面宽度和移动端屏幕一样宽？
+    视口标签。最核心的是宽度设置为移动端设备宽度。
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- 设计稿：
+     移动端设计稿通常以750px作为标准宽度（尤其是微信小程序、H5页面等）。
+     1.早期移动端设计以iPhone为基准，750px（@2x）成为行业默认规范。
+     2.iPhone6/7/8的物理分辨率是750x1334px，设计稿按750px宽度制作时，能直接对应
+     这些设备的1:1视觉还原，方便设计师精准把控细节（如字体大小、间距等）。
+     设计稿按750px（2倍大小）制作后：
+     1.开发时直接缩放到50%（如CSS中写375px），即可适配逻辑分辨率。
+     2.图片和图标按2倍尺寸输出，在高清屏（Retina）上显示更清晰。（2倍图） -->
+
+    <!-- 视口标签 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>移动端知识</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .box {
+        width: 375px;
+        height: 300px;
+        background-color: pink;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box"></div>
+  </body>
+</html>

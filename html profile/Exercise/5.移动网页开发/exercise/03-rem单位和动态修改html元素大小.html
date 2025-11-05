@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>动态修改html元素大小</title>
+    <!-- 当设备旋转（如手机从竖屏转横屏）时，视口的宽高会变化，但vmin始终取当前宽高的较小值，vmax取较大值。 -->
+    <!-- 2.如何动态修改html文字大小?
+媒体查询或者利用Flexible.js（提倡）动态修改文字大小 -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      /* html {
+      font-size: 14px;
+    } */
+
+      .box {
+        width: 2rem;
+        height: 2rem;
+        background-color: pink;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box"></div>
+    <script src="../移动端-优医问诊项目/js/flexible.js"></script>
+  </body>
+</html>

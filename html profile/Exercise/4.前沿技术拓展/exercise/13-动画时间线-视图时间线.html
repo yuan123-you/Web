@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>动画时间线-视图时间线</title>
+    <!-- 视图时间线：动画进度与元素进入/离开视口的可见性关联 -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 3000px;
+      }
+
+      .box {
+        position: sticky;
+        top: 50px;
+        width: 1000px;
+        height: 500px;
+        margin: 800px auto 0;
+      }
+
+      .box p {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 30px;
+      }
+
+      .box .pic1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200px;
+      }
+
+      .box .pic2 {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 200px;
+      }
+
+      .box img {
+        opacity: 0.1;
+        animation: anim 1s linear forwards;
+        /* 绑定视图时间线 */
+        animation-timeline: view();
+      }
+
+      /* 图片动画 */
+      @keyframes anim {
+        0% {
+          transform: scale(0.5);
+          opacity: 0.1;
+        }
+
+        100% {
+          transform: scale(1.5);
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box">
+      <p>专业哈苏人像</p>
+      <img src="../img/x1.jpg" alt="" class="pic1" />
+      <img src="../img/x2.jpg" alt="" class="pic2" />
+    </div>
+  </body>
+</html>

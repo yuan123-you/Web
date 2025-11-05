@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 语法：
+    z-index:数值； 设定层级
+    值类型：整数（正数、负数、零）或auto。数值越大，层级越高
+    默认值：auto（等同于未设置，后出现的元素覆盖前者）。
+    生效条件：仅对定位元素（position值为relative、absolute、fixed或sticky）有效。 -->
+    <style>
+      .box img {
+        position: absolute;
+      }
+      .tel1 {
+        left: 60px;
+      }
+      .tel2 {
+        left: 120px;
+      }
+      .tel3 {
+        left: 180px;
+      }
+      .tel4 {
+        left: 240px;
+      }
+      .box img:hover {
+        z-index: 100;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <img src="../图片素材/img2/tel1.png" alt="" class="tel1" />
+      <img src="../图片素材/img2/tel2.png" alt="" class="tel2" />
+      <img src="../图片素材/img2/tel3.png" alt="" class="tel3" />
+      <img src="../图片素材/img2/tel4.png" alt="" class="tel4" />
+    </div>
+  </body>
+</html>

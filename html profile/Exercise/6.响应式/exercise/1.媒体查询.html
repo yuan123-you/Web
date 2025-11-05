@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 响应式布局是一种网页设计方法，使网页能够根据用户设备的屏幕尺寸、分辨率、方向（横屏/竖屏）等特性
+    自动调整布局和内容，提供一致且优化的用户体验。其核心目标是“一次设计，多端适配”。 -->
+    <!-- 1. 媒体查询(Media Queries):
+    媒体查询是CSS3中的一个强大功能，它允许开发者根据设备的特定特性（如屏幕宽度、高度、方向、分辨率等）来应用不同的CSS样式。
+    媒体查询是实现响应式网页设计（Responsive Web Design）的核心技术。
+    语法：
+    @media 媒体类型and（媒体特征）
+    /*样式 */
+    @media：媒体查询的起始声明
+    设备类型：媒体类型（可选），如screen,print等，省略默认 all
+    设备特性:如 min-width, max-width 等 -->
+    <style>
+      @media screen and (min-width: 1200px) {
+        body {
+          background-color: green;
+        }
+      }
+      @media screen and (min-width: 768px) and (max-width: 1200px) {
+        body {
+          background-color: orange;
+        }
+      }
+      @media screen and (max-width: 768px) {
+        body {
+          background-color: red;
+        }
+      }
+    </style>
+  </head>
+  <body></body>
+</html>

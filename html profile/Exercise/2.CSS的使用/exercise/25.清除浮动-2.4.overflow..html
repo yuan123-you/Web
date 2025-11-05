@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doument</title>
+    <style>
+        .top{
+            margin: 0 auto;
+            width: 1000px;
+            /* height: 200px; */
+/* 清除浮动 
+场景：浮动元素会脱标，如果父级没有高度，子级无法撑开父级高度（可能导致页面布局错乱)
+解决方法：清除浮动（清除浮动带来的影响） */
+            background-color: pink;
+            overflow: hidden;
+            /* 隐藏溢出属性 */
+            /* 方法四 overflow
+            父元素添加CSS属性overflow:hidden */
+        }
+        .left{
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+        .right{
+            float: right;
+            width: 750px;
+            height: 200px;
+            background-color: yellow;
+        }
+        .bottom{
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="top">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+    <div class="bottom"></div>
+</body>
+</html>

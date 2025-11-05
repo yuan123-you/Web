@@ -1,0 +1,321 @@
+/* 这里是写index页面的专门样式*/
+
+/* 1.网页首页部分 */
+.entry {
+  height: 500px;
+  background-color: #f5f5f5;
+}
+.entry .w {
+  position: relative;
+  height: 100%;
+  /* background: url(../uploads/banner1.png) no-repeat; */
+}
+.category {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  /* 提高定位的层级 */
+  width: 250px;
+  height: 500px;
+  background: rgba(0, 0, 0, 0.42);
+  /* 背景黑色 不透明 */
+}
+.category ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  padding-left: 29px;
+  padding-right: 12px;
+  color: #fff;
+}
+.category ul li a {
+  color: #fff;
+  font-size: 14px;
+}
+.category ul li a:first-child {
+  font-size: 16px;
+  margin-right: 10px;
+  /* 给category ul li里的第一个a设置字体大小和有外边距 */
+}
+.category ul li:hover {
+  background-color: #00be9a;
+  /* 设置li标签鼠标悬停效果 */
+}
+.entry .banner {
+  position: relative;
+  /* 相对定位 */
+}
+/* 父相子绝 */
+.entry .banner .dot {
+  display: flex;
+  position: absolute;
+  /* 绝对定位 */
+  bottom: 20px;
+  right: 20px;
+  gap: 16px;
+}
+.entry .banner .dot li {
+  width: 14px;
+  height: 14px;
+  background-color: rgba(255, 255, 255, 0.5);
+  /* 白色半透明 */
+  border-radius: 50%;
+}
+/*鼠标经过利用阴影实现边框效果*/
+.entry .banner .dot li:hover {
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.5);
+  /* X轴偏移量 Y轴偏移量 模糊半径 扩散半径 颜色 内外阴影 */
+  /* 注意：X轴偏移量和Y轴偏移量必须书写 默认是外阴影，内阴影需要添加inset */
+  background-color: #fff;
+}
+/* 左右箭头 */
+.entry .banner .left,
+.entry .banner .right {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 50px;
+  height: 60px;
+  text-align: center;
+  /* 沿着Y轴向上位移自身的50% */
+  transform: translateY(-50%);
+}
+.entry .banner .right {
+  right: 0;
+}
+.entry .banner .left {
+  left: 250px;
+  z-index: 100;
+  /* 提高定位的层级,数字越大，优先级越高*/
+}
+.entry .banner .right i,
+.entry .banner .left i {
+  color: #fff;
+  font-size: 35px;
+  line-height: 60px;
+}
+
+/* 2.新鲜好物商品模块 */
+.w .box-hd {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 112px;
+}
+.w .box-hd h2 {
+  font-size: 30px;
+}
+.w .box-hd small {
+  font-size: 16px;
+  color: #a1a1a1;
+  margin-left: 30px;
+}
+.w .box-hd a {
+  font-size: 16px;
+  color: #a1a1a1;
+}
+.w .box-bd ul {
+  display: flex;
+  justify-content: space-between;
+}
+.w .box-bd ul li {
+  width: 304px;
+  height: 404px;
+  background-color: #eef9f4;
+  text-align: center;
+}
+.w .box-bd ul li:hover {
+  /* 设置鼠标悬停盒子元素移动 */
+  transform: translateY(-10px);
+  /* 添加过渡，更平滑 */
+  transition: all 0.3s;
+  /* 添加阴影 */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+.w .box-bd ul li a {
+  display: block;
+  height: 100%;
+  /* 把a转为块级元素，调整宽高，
+  增大它的点击范围 */
+}
+.w .box-bd ul li img {
+  width: 304px;
+  height: 304px;
+}
+.w .box-bd ul li .title {
+  margin-top: 18px;
+  margin-bottom: 8px;
+  font-size: 20px;
+  padding-left: 25px;
+  padding-right: 25px;
+  /*单行文字溢出显示省略号*/
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.w .box-bd ul li .price {
+  font-size: 22px;
+  color: #aa2113;
+}
+.w .box-bd ul li .price {
+  font-size: 18px;
+}
+/* 人气推荐模块 */
+.hot .box-bd ul li {
+  background-color: #fff;
+}
+.hot {
+  margin-bottom: 60px;
+}
+/* 服装模块 */
+.clothes .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 102px;
+  /* background-color: pink; */
+  padding-top: 10px;
+}
+.clothes .head h2 {
+  font-size: 30px;
+}
+.clothes .head-right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.clothes .head-right {
+  font-size: 16px;
+  color: #a1a1a1;
+}
+.clothes .head-right ul {
+  display: flex;
+  gap: 13px;
+  margin-right: 65px;
+}
+.clothes .head-right ul li a {
+  padding: 3px 8px;
+}
+.clothes .head-right ul li a:hover {
+  color: #fff;
+  background-color: #00be9a;
+}
+
+.clothes .body {
+  display: flex;
+  justify-content: space-between;
+}
+.clothes .body .body-left {
+  width: 248px;
+  height: 610px;
+}
+.clothes .body .body-right {
+  display: flex;
+  flex-wrap: wrap;
+  /* 强制换行 */
+  width: 968px;
+  height: 610px;
+  /* background-color: pink; */
+}
+.clothes .body .body-right li {
+  position: relative;
+  width: 242px;
+  height: 305px;
+  /* background-color: skyblue; */
+  padding: 10px 21px 0;
+  /* 透明边框 */
+  border: 2px solid transparent;
+  /* 元素溢出隐藏 */
+  overflow: hidden;
+}
+.clothes .body .body-right li:hover {
+  /* 鼠标经过变成绿色边框 */
+  border: 2px solid #00be9a;
+}
+.clothes .body .body-right li:hover .cover {
+  /* 鼠标经过li时，li里面的cover盒子向上位移 */
+  transform: translateY(-83px);
+}
+.clothes .body .body-right li .cover {
+  /* 定位，子绝父相 */
+  position: absolute;
+  bottom: -83px;
+  left: 0;
+  width: 100%;
+  height: 83px;
+  background-color: #00be9a;
+  text-align: center;
+  line-height: 83px;
+  color: #fff;
+  /* 增加过渡 */
+  transition: all 0.3s;
+}
+
+.clothes .body .body-right li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 20px;
+}
+.clothes .body .body-right li a img {
+  width: 200px;
+  height: 180px;
+}
+.clothes .body .body-right li .title {
+  padding-top: 10px;
+  font-size: 16px;
+}
+.clothes .body .body-right li .price {
+  font-size: 22px;
+  color: #af2f22;
+  margin-top: 10px;
+}
+.clothes .body .body-right li small {
+  font-size: 16px;
+}
+/* 单行文字溢出显示省略号 */
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* 最新专题模块 */
+.w .news {
+  margin-bottom: 50px;
+}
+.w .news ul {
+  display: flex;
+  gap: 12px;
+}
+.w .news ul li {
+  flex: 1;
+  /* 平均一等分 */
+  height: 355px;
+  /* background-color: pink; */
+}
+.w .news ul li:hover img {
+  transform: scale(1.2);
+}
+.w .news .img{
+  overflow: hidden;
+}
+.w .news ul li img {
+  width: 100%;
+  /*增加过渡 */
+  transition: all 0.3s;
+}
+.w .news ul li .con {
+  height: 67px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  font-size: 14px;
+  color: #666;
+}
+.w .news ul li .con .like {
+  margin-right: 20px;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" name="" id="" />
+    <script>
+      const input1 = document.querySelector("input");
+      input1.addEventListener("keydown", function () {
+        console.log("键盘按下了");
+      });
+      input1.addEventListener("keyup", function () {
+        console.log("键盘抬起了");
+      });
+      input1.addEventListener("input", function () {
+        console.log(input1.value);
+      });
+    </script>
+  </body>
+</html>

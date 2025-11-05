@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>年会抽奖</title>
+    <style>
+      .wrapper {
+        width: 100%px;
+        height: 500px;
+        background: url(./images/bg01.jpg) no-repeat center / cover;
+        padding: 100px 250px;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <strong>传智教育年会抽奖</strong>
+      <h1>一等奖：<span id="one">???</span></h1>
+      <h3>二等奖：<span id="two">???</span></h3>
+      <h5>三等奖：<span id="three">???</span></h5>
+    </div>
+    <script>
+      // 1.声明数组
+      const person = [
+        "刘德华",
+        "游源",
+        "周杰伦",
+        "Smith",
+        "彭于晏",
+        "孙悟空",
+        "Alice",
+        "玉皇大帝",
+        "宋奥",
+        "金炜然",
+        "杰瑞",
+        "熊大",
+        "灰太狼",
+      ];
+      /*
+      // 2. 先做一等奖
+      // 2.1 随机数 数组的下标
+      let number1 = Math.floor(Math.random() * person.length);
+      // 2.2 获取one 元素
+      const prize1 = document.querySelector("#one");
+      // 2.3 把名字给 one
+      prize1.innerHTML = person[number1];
+      // 2.4 删除数组这个名字
+      person.splice(number1, 1);
+      // 2. 再做二等奖
+      // 2.1 随机数 数组的下标
+      let number2 = Math.floor(Math.random() * person.length);
+      // 2.2 获取two 元素
+      const prize2 = document.querySelector("#two");
+      // 2.3 把名字给 two
+      prize2.innerHTML = person[number2];
+      // 2.4 删除数组这个名字
+      person.splice(number2, 1);
+      // 2. 再做三等奖
+      // 2.1 随机数 数组的下标
+      let number3 = Math.floor(Math.random() * person.length);
+      // 2.2 获取three 元素
+      const prize3 = document.querySelector("#three");
+      // 2.3 把名字给 three
+      prize3.innerHTML = person[number3];
+      // 2.4 删除数组这个名字
+      person.splice(number3, 1);
+      */
+      //二.封装函数
+      function choujiang() {
+        //for循环实现
+        //获取span里的所有元素
+        const prize = document.querySelectorAll(".wrapper span");
+        for (let i = 0; i < prize.length; i++) {
+          const number = Math.floor(Math.random() * person.length);
+          // 2.3 把名字给 prize[i]
+          prize[i].innerHTML = person[number];
+          // 2.4 删除数组这个名字
+          person.splice(number, 1);
+        }
+      }
+      choujiang();
+    </script>
+  </body>
+</html>

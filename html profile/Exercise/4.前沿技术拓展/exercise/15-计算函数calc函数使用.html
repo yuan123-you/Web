@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>计算函数calc函数使用</title>
+    <!-- calc)）函数可以执行数学运算（加减乘除），支持混合单位 -->
+    <!-- 语法:
+    .box {
+    width：calc(100% - 20px)；/*父宽度减固定值*/
+    height:calc(var(--base-size) * 1.5);/*变量与运算结合*/
+    加减乘除运算写法：+ - * / 注意符号左右两侧保留空格 -->
+    <style>
+      :root {
+        --gap: 16px;
+      }
+
+      .box {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--gap);
+        width: 1000px;
+        margin: 100px auto;
+      }
+
+      .item {
+        /* calc函数计算 */
+        width: calc(33.3333333% - var(--gap));
+
+        height: 100px;
+        background-color: pink;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+    </div>
+  </body>
+</html>

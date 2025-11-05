@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //封装函数
+      //给函数参数一个默认值
+      function getArrSum(arr = []) {
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+          sum += arr[i];
+        }
+        document.writeln(`数组和为：${sum}<br>`);
+      }
+      getArrSum([1, 2, 3, 4, 5]);
+      getArrSum([11, 22, 33]);
+    </script>
+  </body>
+</html>

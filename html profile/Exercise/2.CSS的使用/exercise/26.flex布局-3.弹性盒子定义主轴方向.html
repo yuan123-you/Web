@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- flex-direction定义主轴方向（改变主轴方向） -->
+    <!-- 属性值 描述 示例效果
+    row  默认值。子元素沿水平主轴（从左到右）排列。ABC（横向排列）.container[flex-direction: row;}
+    row-reverse  子元素沿水平主轴反向排列（从右到左）。 CBA（反向横向排列） .container [flex-direction: row-reverse;
+    column 子元素沿垂直主轴（从上到下）排列。（纵向排列） .container{flex-direction: column;)
+    column-reverse 子元素沿垂直主轴反向排列（从下到上） （反向纵向排列）。 .container {flex-direction: column-reverse;)-->
+    <link rel="stylesheet" href="../图片素材/iconfont1/iconfont.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      li {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+      }
+      .ul li {
+        width: 50px;
+        height: 100px;
+      }
+      .ul li a {
+        display: flex;
+        /* a如果给了flex布局，则可以直接设置宽度和高度 */
+        height: 100%;
+        color: #000;
+        flex-direction: column;
+        /* /*改变主轴的方向*/
+        justify-content: center;
+        /*主轴居中对齐*/
+        align-items: center;
+        /* 交叉轴居中对齐 */
+      }
+      .ul {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="ul">
+      <li>
+        <a href="#">
+          <i class="iconfont icon-xihuan"></i>
+          <p>喜欢</p>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="iconfont icon-diannao"></i>
+          <p>电脑</p>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="iconfont icon-huore"></i>
+          <p>火热</p>
+        </a>
+      </li>
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>变量var的使用</title>
+    <!-- CSS变量（也称为自定义属性）是一种动态存储和复用值的机制。它让样式管理更灵活、可维护。
+    变量可以理解为一个容器，里面可以存放数据。 -->
+    <!-- 定义变量：通过-变量名定义变量。  --color:#000;
+    使用变量：通过var(--变量名）使用定义的变量。
+    color:var(--color); background-color:var(--bgcolor); -->
+    <!-- 作用域：变量的作用范围，哪个区域有效。
+    定义变量：
+    :root{ /*全局变量*/
+    --color:#000;
+    }
+    .box{ /*局部变量*/
+    --bgcolor: pink;
+    }
+    全局作用域：通过 :root定义，作用于整个网页。
+    局部作用域：在特定选择器中定义，仅影响该元素及其子元素。 -->
+    <style>
+      /* 全局作用域里面的变量是 全局变量 */
+      :root {
+        --color: skyblue;
+      }
+      a {
+        list-style: none;
+        text-decoration: none;
+        color: #333;
+      }
+
+      .box {
+        width: 200px;
+        height: 200px;
+        /* background-color: pink; */
+        color: var(--color);
+        text-align: center;
+        line-height: 200px;
+        font-size: 23px;
+        border: 1px solid var(--color);
+      }
+
+      .nav {
+        /* 局部作用域定义的变量是局部变量  只能在当前作用域里面使用 */
+        --fz: 30px;
+      }
+      .nav li a:hover {
+        color: var(--color);
+        font-size: var(--fz);
+      }
+      .content {
+        /* 定义的局部变量fz出作用域了，不生效 */
+        font-size: var(--fz);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box">文字内容</div>
+    <div class="nav">
+      <ul>
+        <li><a href="#">首页</a></li>
+        <li><a href="#">关于我们</a></li>
+        <li><a href="#">联系我们</a></li>
+        <li><a href="#">产品展示</a></li>
+        <li><a href="#">客户案例</a></li>
+      </ul>
+    </div>
+    <div class="content">文字若干</div>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let person = {
+        uname: "you",
+        age: 20,
+        gender: "男",
+      };
+      console.log(person);
+      let goods = {
+        name: "iQOO12燃途版",
+        num: "100012816024",
+        weight: "0.25kg",
+        address: "中国大陆",
+      };
+      console.log(goods);
+      //1.对象属性-查  对象名.属性名
+      document.writeln(`${goods.name}<br>`);
+      //2.对象属性-改  对象名.属性名=新值
+      person.uname = "yuan";
+      document.writeln(`${person.uname}<br>`);
+      //3.对象属性-增  对象名.属性名=新值
+      person.hobby = "健身";
+      document.writeln(`${person.hobby}<br>`);
+      //4.对象属性-删  delete 对象名.属性名
+      delete goods.weight;
+      document.writeln(goods.weight);
+      //第二种写法  对象名["属性名"]
+      document.writeln(goods["weight"]);
+    </script>
+  </body>
+</html>

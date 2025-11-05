@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 
+      解决：需要将复杂数据类型转换成JSON字符串，在存储到本地
+      语法：JSON.stringify(复杂数据类型）
+      解决：把取出来的字符串转换为对象
+      语法:JSON.parse(JSON字符串)
+  --></head>
+  <body>
+    <script>
+      const obj = {
+        uname: "yuan",
+        age: 20,
+        gender: "男",
+      };
+      //1.存数据
+      // localStorage.setItem("object", obj);
+      // 2.取数据
+      // console.log(localStorage.getItem("object"));
+      // 复杂数据类型必须转换成JSON字符串存储
+      console.log(localStorage.setItem("object", JSON.stringify(obj)));
+      // JSON 对象  属性和值有引号，而是引号统一是双引号
+      // 2.取数据
+      // console.log(localStorage.getItem("object"));
+      // 2. 把JSON字符串转换为 对象
+      const str = localStorage.getItem("object");
+      console.log(JSON.parse(str));
+    </script>
+  </body>
+</html>

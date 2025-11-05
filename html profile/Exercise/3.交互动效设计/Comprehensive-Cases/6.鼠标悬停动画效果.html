@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 新知识：
+    box-reflect是CSS中用于为元素创建倒影效果。
+    语法：
+    box-reflect:倒影方向倒影距离倒影图像；
+    ①倒影方向（必写）：
+    above：倒影在元素上方（顶部）。
+    below：倒影在元素下方（底部，最常用）。
+    left：倒影在元素左侧。
+    right：倒影在元素右侧。
+    倒影距离（必写）：
+    倒影图像（可选）：
+    常用线性渐变（linear-gradient）实现从清晰到透明的过渡，避免倒影边缘生
+    注意：因为兼容性问题，前面需要加-webkit- -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #1a252c;
+      }
+      .box {
+        margin: 200px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .box .item {
+        position: relative;
+        width: 120px;
+        height: 120px;
+        margin: 0 2px;
+        cursor: pointer;
+        /* 添加倒影 */
+        -webkit-box-reflect: below 1px linear-gradient(transparent, #0002);
+        transition: all 0.6s;
+      }
+      .box .item img {
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+      }
+      /* 核心代码 */
+      /* 鼠标经过某个盒子，当前盒子变大 */
+      .box .item:hover {
+        transform: scale(1.2);
+        /* 提高层级 */
+        z-index: 1;
+      }
+      /* 鼠标经过某个盒子，其余的子盒子都变形，当前盒子保持不变 */
+      .box:hover .item:not(:hover)
+      /* 新知识：:not();否定选择器
+        作用是“排除”符合某些条件的元素，让样式作用于剩余元素。 */ {
+        transform: perspective(500px) scale(0.9) rotateY(45deg);
+        margin: 0 -20px;
+      }
+      /* 鼠标经过的盒子，后面的兄弟（姐妹） 修改下变形 */
+      .box .item:hover ~ .item 
+      /* 兄弟选择器，选择后面的元素 */ {
+        transform: perspective(500px) scale(0.9) rotateY(-45deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="item"><img src="../img3/1.png" /></div>
+      <div class="item"><img src="../img3/2.png" /></div>
+      <div class="item"><img src="../img3/3.png" /></div>
+      <div class="item"><img src="../img3/4.png" /></div>
+      <div class="item"><img src="../img3/5.png" /></div>
+    </div>
+  </body>
+</html>

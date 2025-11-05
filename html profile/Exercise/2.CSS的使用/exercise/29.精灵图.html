@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>精灵图</title>
+    <!-- CSS精灵图（CSSSprites）是将多个小图标或图像合并到一张大图中，
+    通过调整background-position属性来显示特定部分的图像技术。 -->
+    <!-- 原理：
+    1.给盒子添加背景图片。
+    2.通过背景定位移动位置对齐（background-position）移动位置对齐。
+    3.注意网页坐标不同。 -->
+    
+    <style>
+        .box{
+            width: 27px;
+            height: 26px;
+            background: url(../图片素材/wz.webp) no-repeat;
+        }
+        .box1{
+            background-position: 0 -169px;
+            /* 向左移动0，向上移动169 */
+        }
+        .box2{
+            background-position: -90px -170px;
+            /* 向左移动90，向上移动170 */
+        }
+    </style>
+</head>
+<body>
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+</body>
+</html>

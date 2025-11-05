@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 2.操作类名(className)操作CSS
+  如果修改的样式比较多，直接通过style属性修改比较繁琐，我们可以通过借助于css类名的形式。
+  语法:
+  active 是一个css类名
+  元素.className='active'
+  ：注意:
+  1.由于class是关键字，所以使用className去代替
+  2.className是使用新值换旧值，如果需要添加一个类，需要保留之前的类名 -->
+    <style>
+      div {
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+      }
+      .box {
+        width: 300px;
+        height: 300px;
+        background-color: skyblue;
+        border: 2px solid #000;
+        margin: 100px auto;
+        padding: 10px;
+      }
+      .nav {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav">12345</div>
+    <script>
+      //1.获取元素
+      const box = document.querySelector("div");
+      //2.修改元素  className是使用新值换旧值，如果需要添加一个类，需要保留之前的类名
+      box.className = "nav box";
+    </script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vw单位和插件使用</title>
+    <!-- vW/vh单位适配：
+  vw（ViewportWidth）是一种基于视窗宽度的相对单位，非常适合用于移动端适配。 -->
+    <!-- vw 单位定义：
+  1vw=视窗宽度的1%
+  如果视窗宽度是375px，则1vW=3.75px
+  同理100vw=视窗完整宽度。
+  vh：视窗高度的1%
+  注意vw和%不一样，%相对于父容器 -->
+    <!-- 设计稿转换公式：
+  vw值=（元素在设计稿中的px值/设计稿宽度）×100vw
+  (106 /375)*100vw = 28.26vw -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .box {
+        /* width: 106.0001px;
+      height: 106.0001px; */
+        /* width: 28.266vw;
+      height: 28.266vw; */
+        /* Alt+v,Alt+w px和vw互相转化 */
+        width: 28.2667vw;
+        height: 28.2667vw;
+        background-color: pink;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box"></div>
+  </body>
+</html>

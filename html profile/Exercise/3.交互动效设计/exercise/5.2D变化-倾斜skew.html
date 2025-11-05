@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 倾斜skew -->
+    <style>
+      .div1 {
+        width: 200px;
+        height: 60px;
+        background: skyblue;
+        text-align: center;
+        line-height: 60px;
+        transform: skewX(-20deg);
+      }
+      .box {
+        position: relative;
+        margin: 200px;
+      }
+      .box div {
+        /* 父相子绝 */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 240px;
+        height: 280px;
+        border-radius: 0px 30px 40px 40px;
+        /* 中心点左上 */
+        transform-origin: top left;
+        transition: all 0.3s;
+      }
+      .box .front {
+        /* 提高层级 */
+        z-index: 1;
+        background-color: rgba(255, 255, 255, 0.4);
+        /* 添加滤镜效果 */
+        backdrop-filter: blur(30px);
+      }
+      .box .back {
+        background-color: purple;
+        transform: skewY(8deg);
+      }
+      .box:hover .back {
+        transform: skewY(15deg);
+        width: 200px;
+      }
+      .box:hover .front {
+        transform: translateY(-3px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="div1">英雄联盟</div>
+    <div class="box">
+      <div class="front"></div>
+      <div class="back"></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      span {
+        display: inline-block;
+        width: 80px;
+        padding: 5px 10px;
+        border: 1px solid skyblue;
+        margin: 2px 2px;
+        text-align: center;
+        color: skyblue;
+        border-radius: 5px;
+        background-color: rgba(rgba(135, 206, 235, 0.1));
+        box-shadow: 5px 5px 5px rgba(135, 206, 235, 0.4);
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      let i = 0,
+        j = 0;
+      for (i = 1; i <= 3; i++) {
+        document.writeln(`第${i}天<br>`);
+        for (j = 1; j <= 5; j++) {
+          document.writeln(`记住了第${j}个单词<br>`);
+        }
+      }
+      for (i = 1; i <= 5; i++) {
+        for (j = 1; j <= i; j++) {
+          document.writeln("⭐");
+        }
+        document.writeln("<br>");
+      }
+      for (i = 1; i <= 9; i++) {
+        for (j = 1; j <= i; j++) {
+          document.writeln(`<span>${j}*${i}=${i * j}</span>`);
+        }
+        document.writeln(`<br>`);
+      }
+    </script>
+  </body>
+</html>

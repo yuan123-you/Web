@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background: url(./images/desktop_1.jpg) no-repeat top center / cover;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      //声明一个随机数函数
+      //得到start-end的随机数
+      function getRandom(start, end) {
+        return Math.floor(Math.random() * (end - start + 1) + start);
+      }
+      const random = getRandom(1, 10);
+      document.body.style.backgroundImage = `url(./images/desktop_${random}.jpg)`;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 创建一个Pig构造函数
+      function Pig(uname, age) {
+        this.uname = uname;
+        this.age = age;
+      }
+      const P = new Pig("佩奇", 6);
+      const P1 = new Pig("乔治", 5);
+      console.log(P, P1);
+
+      function Goods(name, price, count) {
+        this.name = name;
+        this.price = price;
+        this.count = count;
+      }
+      const Xiaomi = new Goods("小米", 1999, 20);
+      const Huawei = new Goods("华为", 3999, 59);
+      const Vivo = new Goods("vivo", 1888, 100);
+      console.log(Xiaomi, Huawei, Vivo);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* Flex-认识
+Flexbox是CSS弹性盒子布局模块（FlexibleBoxLayoutModule）的缩写，可以快速实现元素的对齐、分布和空间分配。
+Flex 布局也叫弹性布局,是浏览器提倡的布局模型，
+非常适合结构化布局，提供了强大的空间分布和对齐能力。
+Flex模型不会产生浮动布局中脱标现象，布局网页更简单、更灵活。 */
+
+      /* 弹性盒子核心：
+1.父控子（亲父子）
+父盒子控制子盒子如何排列布局
+父盒子称为容器，子盒子称为项目
+2.主轴和交叉轴（侧轴）
+主轴默认水平方向，交叉轴默认垂直方向，可以更改 */
+
+      /* 属性 作用 示例
+display 定义元素为 Flex 容器 .container{display: flex;}
+flex-direction 定义主轴方向（项目排列方向） .container{flex-direction: row;}
+flex-wrap 控制是否换行 .container {flex-wrap:wrap;}
+justify-content 定义主轴上的对齐方式（整体分布） .container {justify-content: center;)
+align-items 定义交叉轴上的对齐方式（单行时整体对齐）.container{align-items: center;)
+align-content 定义多行时交叉轴上的对齐方式 
+(仅当flex-wrap:wrap且内容换行时生效）.container{align-content: space-between;} */
+      .box {
+        display: flex;
+        width: 500px;
+        height: 100px;
+        border: 1px solid #000;
+      }
+      .box .item {
+        width: 100px;
+        background-color: pink;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+    </div>
+  </body>
+</html>

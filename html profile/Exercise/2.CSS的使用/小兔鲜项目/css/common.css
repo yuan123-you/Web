@@ -1,0 +1,255 @@
+html {
+  scroll-behavior: smooth;
+  /* 平滑滚动 */
+}
+.back {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  width: 40px;
+  height: 40px;
+  background-color: skyblue;
+  text-align: center;
+}
+
+/* 写公共的样式，比如网页的头部和底部 */
+.w {
+  width: 1240px;
+  margin: 0 auto;
+}
+/* 1.网页的头部 */
+
+/* 1.1快捷导航部分 */
+.shortcut {
+  height: 52px;
+  background-color: #333;
+}
+.shortcut ul {
+  display: flex;
+  /* 一行显示 */
+  justify-content: flex-end;
+  /* 沿着主轴右对齐 */
+  align-items: center;
+  /* 沿着交叉轴垂直居中 */
+  height: 52px;
+  /* 给ul设置和父级div一样的高度 */
+}
+.shortcut li a {
+  color: #fff;
+}
+.shortcut li .phone:hover i {
+  transform: rotate(360deg);
+}
+.shortcut li:first-child a,
+.shortcut li a:hover {
+  color: #5eb69c;
+  /* 为第一个li里面的a标签和
+  所有a标签的鼠标悬停设置颜色 */
+}
+.shortcut .line {
+  /* 小竖线，用一个小li来实现 */
+  width: 1px;
+  height: 12px;
+  background-color: #999;
+  /* 给小li加宽高背景色 */
+  margin-left: 15px;
+  margin-right: 15px;
+  /* 左右外边距 */
+}
+.shortcut li i {
+  /* 行内元素无法直接做旋转，需要转换 */
+  display: inline-block;
+  /* 过渡 */
+  transition: all 0.3s;
+  font-size: 18px;
+  margin-right: 4px;
+  /* 给i字体图标设置大小和右外边距 */
+}
+
+/* 1.2header部分制作  */
+.header {
+  position: sticky;
+  /* 粘性定位 */
+  top: 0;
+  z-index: 101;
+  display: flex;
+  justify-content: space-between;
+  /* 沿着主轴右对齐 */
+  align-items: center;
+  /* 沿着交叉轴垂直对齐 */
+  height: 132px;
+  background-color: white;
+}
+/* 1.2.1 logo制作 */
+.header .logo {
+  width: 200px;
+  height: 88px;
+  background-color: skyblue;
+}
+.header .logo h1 {
+  height: 100%;
+  width: 100%;
+}
+.header .logo a {
+  display: block;
+  /* 转换成块级元素，可以调整宽高 */
+  height: 100%;
+  width: 100%;
+  background: url(../images/logo.png) no-repeat;
+  text-indent: -9999px;
+  /* 给a标签文字首行缩进-9999px */
+  overflow: hidden;
+  /* 再进行溢出隐藏，巧妙地隐藏了文字 */
+}
+/* 1.2.2 导航栏制作 */
+.navigation {
+  display: flex;
+  gap: 40px;
+  /* 给父级设置间隔，这样每个li之间都有间隔 */
+}
+.navigation li a {
+  display: block;
+  height: 48px;
+  line-height: 48px;
+}
+.navigation li a:hover {
+  color: #5eb69c;
+  border-bottom: 2px solid #5eb69c;
+  /* 边框底部样式 */
+}
+/* 1.2.3 搜索框制作 */
+.search {
+  position: relative;
+}
+.search i {
+  position: absolute;
+  font-size: 20px;
+  color: #ccc;
+  top: 8px;
+  left: 0;
+}
+.search input {
+  height: 40px;
+  width: 170px;
+  border-bottom: 2px solid #f4f4f4;
+  padding-left: 25px;
+  font-size: 16px;
+}
+.search input::placeholder {
+  color: #ccc;
+  font-size: 16px;
+}
+/* 1.2.4 购物车制作 */
+.car {
+  position: relative;
+}
+.car i {
+  font-size: 40px;
+  margin-right: 15px;
+}
+/* 购物车上的数字角标 */
+.car span {
+  position: absolute;
+  top: 0;
+  left: 26px;
+  background-color: #e26231;
+  border-radius: 50%;
+  color: #fff;
+  padding: 4px 6px;
+}
+/* 2.网页的底部 */
+.footer {
+  height: 580px;
+  background-color: #f5f5f5;
+}
+/* 大盒子，设置高度 背景色 */
+
+/* 2.1 口号模块 */
+.slogan {
+  height: 178px;
+  border-bottom: 1px solid #e8e8e8;
+}
+.slogan ul {
+  display: flex;
+  justify-content: space-evenly;
+  /* 项目间隔均匀分布  每个子元素之间的间隔相等 */
+  align-items: center;
+  height: 178px;
+  line-height: 178px;
+}
+.slogan ul li {
+  display: flex;
+  align-items: center;
+  /* 交叉轴垂直居中 */
+}
+.slogan ul li h5 {
+  width: 58px;
+  height: 58px;
+  background: url(../images/sprite.png) no-repeat;
+}
+.slogan ul li p {
+  margin-left: 20px;
+  font-size: 28px;
+}
+.slogan ul li .two {
+  background-position: 0 -58px;
+  /* 精灵图-向Y轴上方平移58px */
+}
+.slogan ul li .three {
+  background-position: 0 -116px;
+  /* 精灵图-向Y轴上方平移116px */
+}
+.slogan ul li .four {
+  background-position: 0 -174px;
+  /* 精灵图-向Y轴上方平移174px */
+}
+
+/* 2.2 服务模块 */
+.service {
+  display: flex;
+  justify-content: space-between;
+  /* 两端对齐 */
+  margin-top: 60px;
+}
+.service-left {
+  display: flex;
+  gap: 84px;
+}
+
+.service-left dt {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+.service-left dd {
+  margin-bottom: 10px;
+}
+.service-left dd a {
+  color: #969696;
+}
+.service-left dd a i {
+  color: #00be9a;
+}
+
+.service-right ul {
+  display: flex;
+  gap: 55px;
+  text-align: center;
+}
+.service-right ul li {
+  color: #969696;
+}
+.service-right ul li img {
+  margin-bottom: 10px;
+}
+
+/* 2.3 版权模块 */
+.copyright {
+  text-align: center;
+  margin-top: 100px;
+  line-height: 30px;
+  color: #a1a1a1;
+}
+.copyright a {
+  padding: 0 5px;
+  color: #a1a1a1;
+}

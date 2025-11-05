@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 1.2 语法
+JavaScript中定义正则表达式的语法有两种，我们先学习其中比较简单的方法：
+1.定义正则表达式语法：
+const
+变量名=/表达式/
+其中//是正则表达式字面量
+比如：
+const reg=/前端/ 
+2.判断是否有符合规则的字符串：
+test()方法用来查看正则表达式与指定的字符串是否匹配
+语法：
+regObj.test（被检测的字符串）
+比如：
+1/要检测的字符串
+const str=‘IT培训，前端开发培训，IT培训课程，web前端培训，Java培训，人工智能培训‘
+1//1.定义正则表达式，检测规则
+const reg=/前端/
+1/2.检测方法
+console.log(reg.test(str)) // true
+如果正则表达式与指定的字符串匹配，返回true，否则false -->
+
+    <!-- 3.检索（查找）符合规则的字符串：
+exec(方法在一个指定字符串中执行一个搜索匹配
+·语法：
+regObj.exec（被检测字符串）
+比如：
+1/要检测的字符串
+const str='IT培训，前端开发培训，IT培训课程，web前端培训，Java培训，人工智能培训'
+1.定义正则表达式，检测规则
+const reg=/前端/
+1/ 2.检测方法
+console.1og(reg.exec(str))//返回的是数组
+[‘前端'，index:5，input：'IT培训，前端开发培训,IT培训课程，web前端培训,Java培训，人工智能培训l'，groups：undefined]
+如果匹配成功，exec()方法返回一个数组，否则返回null-->
+  </head>
+  <body>
+    <script>
+      const str = "我要学习前端，找到前端的高薪工作！";
+      // 1.定义正则表达式语法：
+      const reg = /前端/;
+      // 2.判断是否有符合规则的字符串： reg.test(str),返回值为true或false
+      console.log(reg.test(str));
+      // 3.检索（查找）符合规则的字符串：
+      console.log(reg.exec(str));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 4.2操作元素样式属性
+  1.通过style属性操作CSS
+  语法：
+  对象.style.样式属性=值
+  注意：
+1.修改样式通过style属性引出
+2.如果属性有-连接符，需要转换为小驼峰命名法
+3.赋值的时候，需要的时候不要忘记加css单位
+愍 -->
+    <style>
+      .box {
+        width: 200px;
+        height: 200px;
+        background-color: skyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <script>
+      //获取元素
+      const box = document.querySelector(".box");
+      box.style.width = "400px";
+      box.style.backgroundColor = "hotpink";
+      box.style.border = "3px solid blue";
+      box.style.borderTop = "3px solid #000";
+    </script>
+  </body>
+</html>

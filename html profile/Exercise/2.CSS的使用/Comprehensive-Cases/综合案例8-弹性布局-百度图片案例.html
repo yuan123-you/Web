@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      li {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+      }
+      .col-flex {
+        display: flex;
+        width: 1180px;
+        margin: 20px auto;
+        /* border: 1px solid red; */
+        gap: 16px;
+        /* 间距16像素 */
+      }
+      .col-flex .box {
+        flex: 1;
+      }
+      .col-flex .box a {
+        overflow: hidden;
+        /* 溢出隐藏图片*/
+        display: block;
+        /* 设置成块级元素，可以调整宽高 */
+        width: 100%;
+        border-radius: 18px;
+        margin-bottom: 15px;
+      }
+      .col-flex .box a img {
+        width: 100%;
+        /* display: block; */
+        /* vertical-align: bottom; */
+        vertical-align: middle;
+        /* vertical-align: top; */
+        /* 垂直对齐-解决图片底部空白缝隙问题
+        基线：浏览器行内元素（行内块元素）排版中存在
+        用于对齐的基线(baseline）
+        图片默认和文字基线对齐
+        解决方案：
+        1.把图片转换为块级元素。
+        2.设置图片对齐方式不是基线对齐即可。*/
+      }
+    </style>
+  </head>
+  <body>
+    <div class="col-flex">
+      <div class="box">
+        <a href="../图片素材/img2/c1.webp" target="_blank"
+          ><img src="../图片素材/img2/c1.webp" alt=""
+        /></a>
+        <a href="#"><img src="../图片素材/img2/c2.webp" alt="" /></a>
+        <a href="#"><img src="../图片素材/img2/c3.webp" alt="" /></a>
+        <a href="#"><img src="../图片素材/img2/c4.webp" alt="" /></a>
+        <a href="#"><img src="../图片素材/img2/c5.webp" alt="" /></a>
+        <a href="#"><img src="../图片素材/img2/c6.webp" alt="" /></a>
+        <a href="#"><img src="../图片素材/img2/c7.webp" alt="" /></a>
+        <a href="#"><img src="../图片素材/img2/c8.webp" alt="" /></a>
+        <a href="#"><img src="../图片素材/img2/c9.webp" alt="" /></a>
+        <a href="#"><img src="../图片素材/img2/c10.webp" alt="" /></a>
+      </div>
+      <div class="box">
+        <a href="#"><img src="../图片素材/img2/c2-1.webp" alt="" /></a>
+        <a href="#"><img src="../图片素材/img2/c2-2.webp" alt="" /></a>
+        <a href="#"><img src="../图片素材/img2/c2-3.webp" alt="" /></a>
+        <a href="#"><img src="../图片素材/img2/c2-4.webp" alt="" /></a>
+        <a href="#"><img src="../图片素材/img2/c2-5.webp" alt="" /></a>
+        <a href="#"><img src="../图片素材/img2/c2-6.webp" alt="" /></a>
+        <a href="#"><img src="../图片素材/img2/c2-7.webp" alt="" /></a>
+        <a href="#"><img src="../图片素材/img2/c2-8.webp" alt="" /></a>
+      </div>
+      <div class="box">
+        <a href="#"><img src="../图片素材/img2/c3-1.webp" alt="" /></a>
+        <a href="#"><img src="../图片素材/img2/c3-2.webp" alt="" /></a>
+        <a href="#"><img src="../图片素材/img2/c3-3.webp" alt="" /></a>
+        <a href="#"><img src="../图片素材/img2/c3-4.webp" alt="" /></a>
+        <a href="#"><img src="../图片素材/img2/c3-5.webp" alt="" /></a>
+      </div>
+      <div class="box">
+        <a href="#"><img src="../图片素材/img2/c4-1.webp" alt="" /></a>
+        <a href="#"><img src="../图片素材/img2/c4-2.webp" alt="" /></a>
+        <a href="#"><img src="../图片素材/img2/c4-3.webp" alt="" /></a>
+        <a href="#"><img src="../图片素材/img2/c4-4.webp" alt="" /></a>
+        <a href="#"><img src="../图片素材/img2/c4-5.webp" alt="" /></a>
+        <a href="#"><img src="../图片素材/img2/c4-6.webp" alt="" /></a>
+        <a href="#"><img src="../图片素材/img2/c4-7.webp" alt="" /></a>
+      </div>
+      <div class="box">
+        <a href="#"><img src="../图片素材/img2/c5-1.webp" alt="" /></a>
+        <a href="#"><img src="../图片素材/img2/c5-2.webp" alt="" /></a>
+        <a href="#"><img src="../图片素材/img2/c5-3.webp" alt="" /></a>
+        <a href="#"><img src="../图片素材/img2/c5-4.webp" alt="" /></a>
+        <a href="#"><img src="../图片素材/img2/c5-5.webp" alt="" /></a>
+        <a href="#"><img src="../图片素材/img2/c5-6.webp" alt="" /></a>
+        <a href="#"><img src="../图片素材/img2/c5-7.webp" alt="" /></a>
+        <a href="#"><img src="../图片素材/img2/c5-8.webp" alt="" /></a>
+        <a href="#"><img src="../图片素材/img2/c5-9.webp" alt="" /></a>
+        <a href="#"><img src="../图片素材/img2/c5-10.webp" alt="" /></a>
+      </div>
+    </div>
+  </body>
+</html>
