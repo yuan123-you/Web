@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        position: relative;
+        height: 300px;
+        width: 100%;
+      }
+      .container .content {
+        height: 100%;
+        width: 100%;
+      }
+      .container .content .active {
+        height: 100%;
+        width: 100%;
+        background-color: pink;
+      }
+      .left {
+        position: absolute;
+        top: calc(50% - 10px);
+        left: 10px;
+      }
+      .right {
+        position: absolute;
+        top: calc(50% - 10px);
+        right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <div class="active subcontent" data-id="0"></div>
+        <!-- <div class="subcontent" data-id="1"></div> -->
+        <!-- <div class="subcontent" data-id="2"></div> -->
+        <!-- <div class="subcontent" data-id="3"></div> -->
+      </div>
+      <!-- <ul> -->
+      <!-- <li class="active"></li> -->
+      <!-- <li></li> -->
+      <!-- <li></li> -->
+      <!-- <li></li> -->
+      <!-- </ul> -->
+      <button class="left">上一页</button>
+      <button class="right">下一页</button>
+    </div>
+    <script>
+      const colorArr = ["pink", "skyblue", "orange", "red"];
+      // 获取元素左右按钮
+      const btn1 = document.querySelector(".left");
+      const btn2 = document.querySelector(".right");
+      const div = document.querySelector(".subcontent");
+      console.log(div);
+      // 定义计数器
+      let count = 0;
+      // 定义定时器变量
+      let timeId;
+      // 声明函数
+      function render() {
+        // console.log(div[count]);
+
+        div.style.backgroundColor = colorArr[count];
+      }
+      // 点击事件
+      btn1.addEventListener("click", function () {
+        count++;
+        count %= colorArr.length;
+        render();
+      });
+      btn2.addEventListener("click", function () {
+        count--;
+        count = count < 0 ? colorArr.length - 1 : count;
+        render();
+      });
+      // 声明定时器函数
+      // 封装定时器函数
+      function my_setInterval() {
+        timeId = setInterval(function () {
+          count++;
+          count %= colorArr.length;
+          render();
+        }, 1000);
+      }
+      // 调用定时器
+      my_setInterval();
+      // 鼠标经过轮播图，停止定时器
+      div.addEventListener("mousemove", function () {
+        clearInterval(timeId);
+      });
+      // 鼠标离开轮播图，开启定时器
+      div.addEventListener("mouseleave", function () {
+        my_setInterval();
+      });
+      btn1.addEventListener("mousemove", function () {
+        clearInterval(timeId);
+      });
+      // 鼠标离开轮播图，开启定时器
+      btn1.addEventListener("mouseleave", function () {
+        my_setInterval();
+      });
+      btn2.addEventListener("mousemove", function () {
+        clearInterval(timeId);
+      });
+      // 鼠标离开轮播图，开启定时器
+      btn2.addEventListener("mouseleave", function () {
+        my_setInterval();
+      });
+    </script>
+  </body>
+</html>
