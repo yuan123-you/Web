@@ -1,0 +1,203 @@
+Git 常用命令格式及用法
+一、配置相关
+# 设置用户名和邮箱（全局配置）
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+
+# 查看配置
+git config --list
+git config user.name  # 查看特定配置
+
+# 设置别名
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+git config --global alias.st status
+二、仓库操作
+# 初始化新仓库
+git init [project-name]
+
+# 克隆远程仓库
+git clone <repository-url>
+git clone <repository-url> <directory-name>  # 克隆到指定目录
+git clone --depth 1 <url>  # 浅克隆（只克隆最近一次提交）
+
+# 查看仓库状态
+git status
+git status -s  # 简洁模式
+
+# 查看远程仓库
+git remote -v
+git remote show origin  # 查看远程仓库详情
+三、文件操作
+# 添加文件到暂存区
+git add <file>              # 添加指定文件
+git add .                   # 添加所有修改
+git add *.js                # 添加所有.js文件
+git add -A                  # 添加所有文件（包括删除的）
+
+# 提交更改
+git commit -m "commit message"
+git commit -am "message"    # 添加并提交已跟踪的文件
+git commit --amend          # 修改最近一次提交
+
+# 移除文件
+git rm <file>               # 删除文件并暂存
+git rm --cached <file>      # 从版本控制移除，但保留本地文件
+
+# 移动/重命名文件
+git mv <old> <new>
+四、分支管理
+# 查看分支
+git branch                  # 查看本地分支
+git branch -a               # 查看所有分支（包括远程）
+git branch -r               # 查看远程分支
+git branch -v               # 查看分支最后提交
+
+# 创建分支
+git branch <branch-name>    # 创建分支
+git checkout -b <branch>    # 创建并切换到新分支
+git switch -c <branch>      # 新语法（Git 2.23+）
+
+# 切换分支
+git checkout <branch>
+git switch <branch>         # 新语法
+
+# 合并分支
+git merge <branch>          # 合并指定分支到当前分支
+git merge --no-ff <branch>  # 禁用快进合并
+
+# 删除分支
+git branch -d <branch>      # 删除已合并的分支
+git branch -D <branch>      # 强制删除分支
+git push origin --delete <branch>  # 删除远程分支
+五、远程操作
+# 添加远程仓库
+git remote add <name> <url>
+
+# 拉取远程更新
+git pull                    # 拉取并合并
+git pull origin <branch>    # 拉取指定分支
+git fetch                   # 仅拉取不合并
+
+# 推送本地提交
+git push                    # 推送到默认远程分支
+git push origin <branch>    # 推送到指定分支
+git push -u origin <branch> # 首次推送并设置上游
+
+# 更新远程分支列表
+git remote update --prune
+六、查看历史
+# 查看提交历史
+git log
+git log --oneline          # 单行显示
+git log --graph           # 图形化显示
+git log -p               # 显示具体修改内容
+git log -n <number>      # 显示最近n条记录
+git log --since="2 weeks ago"
+
+# 查看文件更改
+git diff                  # 工作区与暂存区的差异
+git diff --staged        # 暂存区与上次提交的差异
+git diff HEAD           # 工作区与最新提交的差异
+git diff <commit1> <commit2>  # 两次提交间的差异
+
+# 查看指定文件的历史
+git log -p <file>        # 查看文件的修改历史
+git blame <file>         # 逐行查看谁修改的
+七、撤销操作
+# 撤销工作区修改
+git checkout -- <file>    # 撤销文件修改
+git restore <file>        # 新语法（Git 2.23+）
+
+# 撤销暂存区
+git reset HEAD <file>     # 取消暂存
+git restore --staged <file>  # 新语法
+
+# 撤销提交
+git reset --soft HEAD^    # 撤销提交但保留更改在暂存区
+git reset --mixed HEAD^   # 撤销提交和暂存（默认）
+git reset --hard HEAD^    # 彻底删除提交和更改
+
+# 回滚到特定提交
+git revert <commit>       # 创建新的提交来撤销之前的提交
+
+# 清理未跟踪文件
+git clean -n              # 预览将被删除的文件
+git clean -f              # 强制删除未跟踪文件
+git clean -df             # 删除未跟踪文件和目录
+八、储藏（Stash）
+# 储藏当前修改
+git stash
+git stash save "message"  # 带说明的储藏
+git stash -u              # 包括未跟踪文件
+
+# 查看储藏列表
+git stash list
+
+# 恢复储藏
+git stash pop             # 恢复并删除储藏
+git stash apply stash@{n} # 恢复指定储藏但不删除
+git stash apply           # 恢复最近储藏
+
+# 删除储藏
+git stash drop stash@{n}
+git stash clear           # 删除所有储藏
+九、标签管理
+# 查看标签
+git tag
+git tag -l "v1.*"         # 筛选标签
+
+# 创建标签
+git tag <tagname>         # 轻量标签
+git tag -a <tagname> -m "message"  # 附注标签
+git tag -a <tagname> <commit>      # 给历史提交打标签
+
+# 推送标签
+git push origin <tagname>
+git push origin --tags    # 推送所有标签
+
+# 删除标签
+git tag -d <tagname>
+git push origin --delete <tagname>  # 删除远程标签
+十、高级操作
+# 二分查找（定位bug）
+git bisect start
+git bisect bad           # 当前版本有问题
+git bisect good <commit> # 指定一个正常版本
+# 测试后标记 good/bad，Git会自动二分查找
+
+# 重写历史
+git rebase -i HEAD~3     # 交互式变基最近3次提交
+
+# 子模块
+git submodule add <url>  # 添加子模块
+git submodule update --init --recursive  # 初始化并更新子模块
+
+# 查看帮助
+git <command> --help
+git help <command>
+使用示例
+# 典型工作流程
+git init                    # 初始化仓库
+git add .                   # 添加所有文件
+git commit -m "Initial commit"
+
+# 分支开发流程
+git checkout -b feature/new-feature  # 创建特性分支
+# ...进行开发...
+git add .
+git commit -m "Add new feature"
+git checkout main          # 切换回主分支
+git merge feature/new-feature  # 合并特性分支
+
+# 修复紧急bug
+git stash                  # 储藏当前工作
+git checkout -b hotfix/bug-fix  # 创建修复分支
+# ...修复bug...
+git add .
+git commit -m "Fix critical bug"
+git checkout main
+git merge hotfix/bug-fix
+git stash pop              # 恢复之前的工作
+这些命令涵盖了Git日常使用的大部分场景。记住，Git命令非常丰富，每个命令还有很多可选参数，可以通过--help查看详细用法。
