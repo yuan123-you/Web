@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <h3>小黑的书架</h3>
+      <ul></ul>
+    </div>
+    <!-- v-for 中的 key
+    语法：key属性=“唯一标识”
+    作用：给列表项添加的唯一标识。便于Vue进行列表项的正确排序复用。
+    v-for 中的 key -不加 key
+    v-for的默认行为会尝试原地修改元素
+    （就地复用）
+    注意点：
+1. key的值只能是字符串或数字类型
+2. key的值必须具有唯一性
+3.推荐使用id作为key（唯一），不推荐使用index作为key（会变化，不对应）
+    -->
+    <script src="./vue.js"></script>
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data: {
+          booksList: [
+            { id: 1, name: "《红楼梦》", author: "曹雪芹" },
+            { id: 2, name: "《西游记》", author: "吴承恩" },
+            { id: 3, name: "《水浒传》", author: "施耐庵" },
+            { id: 4, name: "《三国演义》", author: "罗贯中" },
+          ],
+        },
+      });
+    </script>
+  </body>
+</html>

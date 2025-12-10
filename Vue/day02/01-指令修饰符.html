@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+      指令修饰符
+      通过 "."指明一些指令后缀，不同后缀封装了不同的处理操作→简化代码
+      ①按键修饰符
+      @keyup.enter 键盘回车监听
+      ②v-model修饰符
+      V-model.trim 去除首尾空格
+      v-model.number  转数字
+      ③事件修饰符
+      @事件名.stop  阻止冒泡
+      @事件名.prevent  阻止默认行为
+    -->
+    <div id="app">
+      <h3>@keyup.enter → 监听键盘回车事件</h3>
+      <input v-model="username" type="text" @keyup.enter="fn" />
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data: {
+          username: "",
+        },
+        methods: {
+          fn() {
+            console.log(this.username);
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
