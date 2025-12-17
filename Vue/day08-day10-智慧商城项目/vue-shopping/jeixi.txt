@@ -1,0 +1,266 @@
+智慧商城项目代码解析
+项目概述
+这是一个基于 Vue 2.6.14 构建的智慧商城项目，采用了现代化的前端技术栈，包括 Vue Router 用于路由管理、Vuex 用于状态管理、Vant UI 组件库提供界面组件，以及 Less 预处理器用于样式编写。
+
+项目结构
+项目采用了标准的 Vue 项目结构，主要分为以下几个部分：
+
+
+plainText
+src/
+├── App.vue              # 根组件
+├── api/                 # API 接口定义
+├── assets/              # 静态资源文件
+├── components/          # 通用组件
+├── main.js              # 项目入口文件
+├── mixins/              # 混入文件
+├── router/              # 路由配置
+├── store/               # 状态管理
+├── styles/              # 样式文件
+├── utils/               # 工具函数
+└── views/               # 页面组件
+核心配置文件
+package.json
+项目的核心配置文件，定义了项目的依赖、脚本命令和基本信息。
+
+
+json
+Apply
+{
+  "name": "vue-shopping",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",    // 开发服务器
+    "build": "vue-cli-service build",    // 构建生产版本
+    "lint": "vue-cli-service lint"       // 代码检查
+  },
+  "dependencies": {
+    "core-js": "^3.8.3",
+    "vant": "^2.13.9",                   // Vant UI 组件库
+    "vue": "^2.6.14",                    // Vue 核心库
+    "vue-router": "^3.5.1",              // Vue 路由
+    "vuex": "^3.6.2"                     // Vue 状态管理
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-plugin-router": "~5.0.0",
+    "@vue/cli-plugin-vuex": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "@vue/eslint-config-standard": "^6.1.0",
+    "babel-plugin-import": "^1.13.8",    // 按需导入插件
+    "eslint": "^7.32.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-vue": "^8.0.3",
+    "less": "^4.0.0",                    // Less 预处理器
+    "less-loader": "^8.0.0",
+    "postcss-px-to-viewport": "^1.1.1",  // 像素转视口单位插件
+    "vue-template-compiler": "^2.6.14"
+  }
+}
+入口文件 (main.js)
+项目的入口文件，负责初始化 Vue 实例并配置全局资源。
+
+
+javascript
+Apply
+import Vue from 'vue'
+import App from './App.vue'
+import router from './router'
+import store from './store'
+import '@/utils/vant-ui'      // 导入 Vant UI 组件
+import '@/styles/common.less' // 导入全局样式
+
+Vue.config.productionTip = false
+
+new Vue({
+  router,  // 注入路由
+  store,   // 注入状态管理
+  render: h => h(App)  // 渲染根组件
+}).$mount('#app')
+路由配置 (router/index.js)
+配置了项目的路由结构，包括权限控制。
+
+
+javascript
+Apply
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+import Login from '@/views/login'
+import Layout from '@/views/layout'
+import Search from '@/views/search'
+import SearchList from '@/views/search/list'
+import ProDetail from '@/views/prodetail'
+import Pay from '@/views/pay'
+import MyOrder from '@/views/myorder'
+
+import Home from '@/views/layout/home'
+import Category from '@/views/layout/category'
+import Cart from '@/views/layout/cart'
+import User from '@/views/layout/user'
+
+import store from '@/store'
+
+Vue.use(VueRouter)
+
+const router = new VueRouter({
+  routes: [
+    { path: '/login', component: Login },
+    {
+      path: '/',
+      component: Layout,
+      redirect: '/home',
+      children: [
+        { path: '/home', component: Home },      // 首页
+        { path: '/category', component: Category },  // 分类页
+        { path: '/cart', component: Cart },      // 购物车
+        { path: '/user', component: User }       // 个人中心
+      ]
+    },
+    { path: '/search', component: Search },     // 搜索页
+    { path: '/searchlist', component: SearchList },  // 搜索结果页
+    { path: '/prodetail/:id', component: ProDetail },  // 商品详情页
+    { path: '/pay', component: Pay },           // 支付页
+    { path: '/myorder', component: MyOrder }    // 订单页
+  ]
+})
+
+// 权限控制：定义需要登录才能访问的页面
+const authUrls = ['/pay', '/myorder']
+
+router.beforeEach((to, from, next) => {
+  if (!authUrls.includes(to.path)) {
+    // 非权限页面，直接放行
+    next()
+    return
+  }
+
+  // 是权限页面，需要判断token
+  const token = store.getters.token
+  if (token) {
+    next()
+  } else {
+    next('/login')  // 未登录则跳转到登录页
+  }
+})
+
+export default router
+状态管理 (store/index.js)
+采用模块化的方式管理状态，分为用户模块和购物车模块。
+
+
+javascript
+Apply
+import Vue from 'vue'
+import Vuex from 'vuex'
+import user from './modules/user'   // 用户模块
+import cart from './modules/cart'   // 购物车模块
+
+Vue.use(Vuex)
+
+export default new Vuex.Store({
+  getters: {
+    token (state) {
+      return state.user.userInfo.token  // 获取token的快捷访问
+    }
+  },
+  modules: {
+    user,
+    cart
+  }
+})
+Vant UI 配置 (utils/vant-ui.js)
+按需导入 Vant UI 组件，减少打包体积。
+
+
+javascript
+Apply
+import Vue from 'vue'
+import { Tab, Tabs, Checkbox, Dialog, ActionSheet, Icon, Search, Swipe, SwipeItem, Grid, GridItem, Toast, Button, Switch, Rate, Tabbar, TabbarItem, NavBar } from 'vant'
+
+Vue.use(Tab)
+Vue.use(Tabs)
+Vue.use(Checkbox)
+Vue.use(Dialog)
+Vue.use(ActionSheet)
+Vue.use(Icon)
+Vue.use(Search)
+Vue.use(Swipe)
+Vue.use(SwipeItem)
+Vue.use(Grid)
+Vue.use(GridItem)
+Vue.use(Toast)
+Vue.use(NavBar)
+Vue.use(Tabbar)
+Vue.use(TabbarItem)
+Vue.use(Rate)
+Vue.use(Button)
+Vue.use(Switch)
+API 接口设计
+API 接口按功能模块划分，每个模块对应一个文件：
+
+
+plainText
+api/
+├── address.js    # 地址管理
+├── cart.js       # 购物车管理
+├── category.js   # 分类管理
+├── home.js       # 首页数据
+├── login.js      # 登录相关
+├── order.js      # 订单管理
+├── product.js    # 商品管理
+└── user.js       # 用户管理
+这种设计使得 API 接口的维护和扩展更加方便。
+
+主要页面组件
+项目包含多个核心页面组件，主要分为以下几类：
+
+布局组件：
+
+layout/index.vue - 主布局组件
+layout/home.vue - 首页
+layout/category.vue - 分类页
+layout/cart.vue - 购物车
+layout/user.vue - 个人中心
+功能页面：
+
+login/index.vue - 登录页
+search/index.vue - 搜索页
+search/list.vue - 搜索结果页
+prodetail/index.vue - 商品详情页
+pay/index.vue - 支付页
+myorder/index.vue - 订单页
+通用组件：
+
+CountBox.vue - 数量选择器
+GoodsItem.vue - 商品项
+OrderListItem.vue - 订单项
+工具函数
+项目中包含多个工具函数，用于处理各种通用逻辑：
+
+request.js - 网络请求封装
+storage.js - 本地存储封装
+vant-ui.js - UI 组件配置
+样式设计
+项目使用 Less 预处理器编写样式，包含全局样式文件 styles/common.less，并通过 postcss-px-to-viewport 插件将像素单位转换为视口单位，实现响应式设计。
+
+权限管理
+项目实现了基于 Token 的权限管理机制：
+
+在路由配置中定义了需要权限访问的页面
+使用路由守卫拦截请求，检查用户是否登录
+未登录用户将被重定向到登录页面
+总结
+这个智慧商城项目采用了现代化的前端技术栈和架构设计，具有以下特点：
+
+模块化设计：代码按功能模块划分，便于维护和扩展
+组件化开发：使用 Vant UI 组件库和自定义组件，提高开发效率
+响应式布局：使用视口单位实现适配各种屏幕尺寸
+权限控制：基于 Token 的权限管理机制
+状态管理：使用 Vuex 集中管理应用状态
+API 分层：按功能模块划分 API 接口，提高代码可维护性
+项目结构清晰，代码组织合理，是一个典型的 Vue 商城项目实现。
